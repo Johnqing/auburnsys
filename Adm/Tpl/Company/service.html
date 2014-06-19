@@ -1,0 +1,24 @@
+<extend name="Public/base" />
+
+<block name="top">
+	<include file="Public/top.html"/>
+</block>
+<block name="nav">
+	<include file="Public/nav.html"/>
+</block>
+<block name="wraper">
+	<form action="{:U('addOther')}" method="post" id="login">
+		<div class="login-box">
+			<div class="error"></div>
+			<ul>
+				<li>
+					<span>服务宗旨</span>
+					<textarea name="service" class="tex">{$list.service}</textarea>
+				</li>
+				<li class="btns-box">
+					<input type="submit" value="提交"/>
+				</li>
+			</ul>
+		</div>
+	</form>
+</block>

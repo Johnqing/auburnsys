@@ -1,0 +1,13 @@
+node_modules/
+
+.idea/
+
+*.bak
+
+ThinkPHP/
+
+Front/Runtime/
+
+Adm/Runtime/
+
+Inc/

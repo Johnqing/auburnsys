@@ -1,0 +1,33 @@
+<extend name="Public/base" />
+
+<block name="top">
+	<include file="Public/top.html"/>
+</block>
+<block name="nav">
+	<include file="Public/nav.html"/>
+</block>
+<block name="wraper">
+	<form action="{:U('addOther')}" method="post">
+		<div class="login-box">
+			<div class="error"></div>
+			<ul>
+				<li>
+					<span>历史回顾标题</span>
+					<textarea name="history_tit" class="tex">{$list.history_tit}</textarea>
+				</li>
+				<li>
+					<span>历史回顾详情</span>
+					<textarea name="history_desc" class="tex" data-editor="news_cont">{$list.history_desc}</textarea>
+				</li>
+				<li class="btns-box">
+					<input type="submit" value="提交"/>
+				</li>
+			</ul>
+		</div>
+	</form>
+</block>
+
+<block name="js">
+	<script src="__PUBLIC__/admin/js/xheditor/xheditor-1.1.14-zh-cn.min.js"></script>
+	<script src="__PUBLIC__/admin/js/page/editor.js"></script>
+</block>

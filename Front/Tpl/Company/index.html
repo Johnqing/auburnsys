@@ -1,0 +1,45 @@
+<extend name="Public/base" />
+<block name="css">
+    <link rel="stylesheet" href="__PUBLIC__/css/combo/company.css"/>
+</block>
+<block name="wraper">
+    <div class="wrap mb5x4">
+        <img src="__PUBLIC__/img/banner/company.png" alt="公司信息"/>
+    </div>
+    <div class="wrap clearfix">
+
+        <div class="sub-nav fl">
+            <h2>Products</h2>
+            <include file="Public/companyNav.html" />
+        </div>
+
+        <div class="sub-wrap fr company-box">
+            <div class="m1 s-mt">
+                <h2>论文与报道</h2>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="__APP__">首页</a> <span class="divider">&gt;</span>
+                    </li>
+                    <li>
+                        <a href="__ROOT__/Company">公司信息</a> <span class="divider">&gt;</span>
+                    </li>
+                    <li class="active">论文与报道</li>
+                </ul>
+            </div>
+            <div class="pr-box">
+                <volist name="list" id="vo">
+                    <dl>
+                        <dt><a href="{$vo.pr_url}">{$vo.name}</a></dt>
+                        <dd>
+	                        <p>{$vo.pr_desc}</p>
+	                        <span class="time">{$vo.pr_time}</span>
+                        </dd>
+                    </dl>
+                </volist>
+            </div>
+
+            <div class="ui-page-nav">{$page}</div>
+        </div>
+
+    </div>
+</block>

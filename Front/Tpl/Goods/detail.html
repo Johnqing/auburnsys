@@ -1,0 +1,53 @@
+<extend name="Public/base" />
+<block name="css">
+	<link rel="stylesheet" href="__PUBLIC__/css/combo/goods.css"/>
+</block>
+<block name="wraper">
+	<div class="wrap mb5x4">
+		<img src="__PUBLIC__/img/banner/about.jpg" alt="关于我们"/>
+	</div>
+	<div class="wrap clearfix">
+
+		<div class="sub-nav fl">
+			<h2>Products</h2>
+			<include file="Public/goodsNav.html" />
+		</div>
+
+		<div class="sub-wrap fr patent-box about-box">
+			<div class="m1 s-mt">
+				<h2>{$good.goods_name|msubstr=0,20}</h2>
+				<ul class="breadcrumb">
+					<li>
+						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
+					</li>
+					<li>
+						<a href="__ROOT__/Goods">产品</a> <span class="divider">&gt;</span>
+					</li>
+					<li class="active">{$good.goods_name|msubstr=0,20}</li>
+				</ul>
+			</div>
+			<div class="dt-tit">
+				<div class="fl">
+					<span class="time">{$good.goods_addtime}</span>
+					<div class="pdf-box">
+						<volist name="good.pdf" id="vo">
+							<a href="{$vo.pdf_url}">{$vo.pdf_name}</a>
+						</volist>
+					</div>
+				</div>
+				<div class="fl tit">
+					{$good.goods_name}
+				</div>
+			</div>
+
+			<div class="dt-cont">
+				<img src="{$good.goods_pics}" alt=""/>
+				<div class="dt-text">
+					{$good.goods_desc}
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</block>

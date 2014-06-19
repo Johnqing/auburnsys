@@ -1,0 +1,41 @@
+<extend name="Public:base" />
+<block name="css">
+	<link rel="stylesheet" href="__PUBLIC__/css/combo/index.css"/>
+</block>
+<block name="wraper">
+	<div class="banner">
+		banner
+	</div>
+
+	<div class="wrap clearfix w-index-info">
+		<div class="fl mr5x2 m1">
+			<h3 class="yahei">Product Info</h3>
+			<div class="mc">
+				<ul>
+					<Volist name="prduct" id="vo">
+						<li><a href="__ROOT__/Goods/goods_desc?time={$vo.goods_addtime}">{$vo.goods_name|msubstr=0,20}</a></li>
+					</Volist>
+				</ul>
+				<div class="more"><a href="__ROOT__/Goods">More</a></div>
+			</div>
+		</div>
+		<div class="fl mr5x2 m2">
+			<h3 class="yahei">About Us</h3>
+			<div class="mc">
+				<div class="desc">{$company.desc}</div>
+				<div class="more"><a href="__ROOT__/About">More</a></div>
+			</div>
+		</div>
+		<div class="span3 fl m3">
+			<h3 class="yahei">Contact  Us</h3>
+			<dl>
+				<dt>奥本系统北京代表处</dt>
+				<dd>Tel：{$company.tel}</dd>
+				<dd>Mobile：{$company.mobile}</dd>
+				<dd>Fex：{$company.fex}</dd>
+				<dd>Email：{$company.email}</dd>
+			</dl>
+			<div class="address">{$company.address}</div>
+		</div>
+	</div>
+</block>

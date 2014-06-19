@@ -1,0 +1,23 @@
+<extend name="Public/base" />
+
+<block name="top">
+	<include file="Public/top.html"/>
+</block>
+<block name="nav">
+	<include file="Public/nav.html"/>
+</block>
+<block name="wraper">
+	<div class="add-news">
+		<a href="{:U('modifyOverview')}">添加的历史概况</a>
+	</div>
+	<div class="old-content">
+		<ul>
+			<volist name="list" id="vo">
+				<li>
+					<span>{$vo.overview_desc}</span>
+					<a href="{:U('modifyOverview')}?id={$vo.id}">修改</a>
+				</li>
+			</volist>
+		</ul>
+	</div>
+</block>

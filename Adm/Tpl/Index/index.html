@@ -1,0 +1,20 @@
+<extend name="Public/base" />
+
+<block name="top">
+	<include file="Public/top.html"/>
+</block>
+<block name="nav">
+	<include file="Public/nav.html"/>
+</block>
+<block name="wraper">
+	<h2 class="h_a">系统信息</h2>
+	<div class="home_info">
+		<ul>
+			<volist name="server_info" id="vo">
+				<li>
+					<em>{$key}</em><span>{$vo}</span>
+				</li>
+			</volist>
+		</ul>
+	</div>
+</block>

@@ -1,0 +1,190 @@
+@import "../public/metho";
+@import "./skin";
+
+.language{
+	float: right;
+	border-radius: 30px;
+
+	padding: 2px 5px;
+
+	background: #f4f2f2;
+
+	color: #999;
+	a{
+		margin: 0 2px;
+		color: #999;
+	}
+}
+
+.header{
+	clear: both;
+	margin: 5px 0 15px;
+	height: 66px;
+	@h: 38px;
+	h1{
+		height: @h;
+		.setBg('public/base');
+		a{
+			padding-top: @h;
+			height: 0;
+			overflow: hidden;
+		}
+	}
+	h1,
+	h1 a{
+		display: block;
+		width: 96px;
+	}
+
+	.nav{
+		padding-top: 12px;
+		width: 525px;
+		li{
+			display: inline;
+			float: left;
+			margin-left: 20px;
+			color: #ccc;
+		}
+		.last a{
+			margin-right: 0;
+		}
+		a{
+			margin-right: 20px;
+			.yahei;
+			font-size: 14px;
+			color: #444;
+		}
+		.active{
+			font-weight: bold;
+			color: #093f89;
+		}
+	}
+}
+.row-sub-nav{
+	margin-top: 10px;
+	padding: 0 20px;
+	height: 27px;
+	line-height: 27px;
+	background: #eeecec;
+	li{
+		float: left;
+		margin-right: 15px;
+	}
+	a{
+		color: #093f89;
+	}
+	.active a{
+		font-weight: bold;
+		color: #666;
+	}
+}
+
+.sub-nav{
+	width: 151px;
+    .mc{
+      margin-top: 10px;
+    }
+	h2{
+		padding-bottom: 5px;
+
+		color: #252525;
+		font-size: 24px;
+        font-weight: normal;
+		.setBg('public/nav_t_bg');
+		background-position: left bottom;
+	}
+	li{
+		overflow: hidden;
+		border-top: 1px solid #ebebeb;
+
+		padding-left: 15px;
+
+		height: 33px;
+		line-height: 33px;
+	}
+	.first{
+		border:0
+	}
+	.active{
+		.setBg('public/jh_bg');
+		background-position: left center;
+		a{
+			font-weight: bold;
+			color: #000;
+		}
+	}
+	a{
+		.yahei;
+		color: #666;
+	}
+}
+.sub-wrap{
+	width: 757px;
+	.s-mt{
+		overflow: hidden;
+		*zoom: 1;
+
+		margin-bottom: 15px;
+
+		border-bottom: 2px solid #818080;
+		padding-bottom: 5px;
+		h2{
+			float: left;
+			.yahei;
+			font-weight: normal;
+			font-size: 24px;
+			color: #000;
+		}
+		.breadcrumb{
+			float: right;
+			margin-top: 15px;
+		}
+	}
+}
+
+.footer{
+	margin-top: 90px;
+	border-top: 1px solid #e0dfdf;
+	padding: 25px 0;
+	background: #efecec;
+
+	text-align: center;
+
+	&,a{
+		color: #999;
+	}
+}
+
+.breadcrumb{
+	li{
+		display: inline-block;
+		color: #333;
+	}
+	.divider,
+	a{
+		color: #666;
+	}
+}
+
+.table{
+	width: 100%;
+	th,
+	td {
+		border-bottom: 1px solid #ddd;
+
+		padding: 8px;
+
+		line-height: 18px;
+		text-align: left;
+		vertical-align: top;
+	}
+	th {
+		font-weight: bold;
+		vertical-align: bottom;
+	}
+}
+
+.ui-page-nav{
+	margin: 10px 0;
+	text-align: right;
+}

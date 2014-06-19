@@ -1,0 +1,47 @@
+<extend name="Public/base" />
+<block name="css">
+	<link rel="stylesheet" href="__PUBLIC__/css/combo/goods.css"/>
+</block>
+<block name="wraper">
+	<div class="wrap mb5x4">
+		<img src="__PUBLIC__/img/banner/about.jpg" alt="关于我们"/>
+	</div>
+	<div class="wrap clearfix">
+
+		<div class="sub-nav fl">
+			<h2>Products</h2>
+			<include file="Public/goodsNav.html" />
+		</div>
+
+		<div class="sub-wrap fr patent-box about-box">
+			<div class="m1 s-mt">
+				<h2>ALL</h2>
+				<ul class="breadcrumb">
+					<li>
+						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
+					</li>
+					<li>
+						<a href="__ROOT__/Goods">产品</a> <span class="divider">&gt;</span>
+					</li>
+					<li class="active">all</li>
+				</ul>
+			</div>
+			<volist name="gds_ls" id="vo">
+				<div class="m">
+					<div class="img">
+						<img src="__PUBLIC__/Uploads/goods/{$vo.goods_pics}" alt=""/>
+					</div>
+					<div class="s-m">
+						<div class="mt">{$vo.goods_name}</div>
+						<p>{$vo.goods_desc|msubstr=0,200}<a href="__ROOT__/Goods/detail?id={$key}">更多详情</a></p>
+						<volist name="vo.pdfs" id="pdf">
+							<a href="{$pdf.pdf_url}">{$pdf.pdf_name}</a>
+						</volist>
+					</div>
+				</div>
+			</volist>
+			<div class="ui-page-nav">{$page}</div>
+		</div>
+
+	</div>
+</block>

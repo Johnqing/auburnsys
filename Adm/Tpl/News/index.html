@@ -1,0 +1,23 @@
+<extend name="Public/base" />
+
+<block name="top">
+    <include file="Public/top.html"/>
+</block>
+<block name="nav">
+    <include file="Public/nav.html"/>
+</block>
+<block name="wraper">
+    <form action="{:U('addData')}" method="post" id="login">
+        <div class="login-box">
+            <div class="error"></div>
+            <ul>
+                <volist name="list" id="vo">
+                <li>
+                    <span>{$vo.news_tit}</span>
+                    <a href="{:U('modify')}?id={$vo.id}">修改</a>
+                </li>
+                </volist>
+            </ul>
+        </div>
+    </form>
+</block>

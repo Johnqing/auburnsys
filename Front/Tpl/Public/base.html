@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7 ]><html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8 ]><html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="" lang="zh-cn"><!--<![endif]-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$company.name}</title>
+	<meta name="renderer" content="webkit">
+	<meta name="Keywords" content="{$company.keys}" />
+	<meta name="Description" content="{$company.desc}" />
+	<link rel="stylesheet" href="__PUBLIC__/css/combo/base.css"/>
+	<block name="css"></block>
+	<script>
+		var GV = {
+			PUBLIC: '__PUBLIC__'
+		}
+	</script>
+</head>
+<body>
+<div class="top">
+	<div class="wrap">
+		<span class="language"><a href="__APP__">中文</a>|<a href="#">ENGLISH</a></span>
+	</div>
+</div>
+
+<div class="header">
+	<div class="wrap clearfix">
+		<h1 class="fl"><a href="__APP__">{$company.name}</a></h1>
+		<div class="fr">
+			<ul class="nav clearfix">
+				<li><a href="__APP__" <eq name="nav_type" value="index">class="active"</eq>>首页</a>|</li>
+				<li><a href="__ROOT__/About" <eq name="nav_type" value="about">class="active"</eq>>关于奥本</a>|</li>
+				<li><a href="__ROOT__/News" <eq name="nav_type" value="news">class="active"</eq>>公司新闻</a>|</li>
+				<li><a href="__ROOT__/Goods" <eq name="nav_type" value="goods">class="active"</eq>>产品</a>|</li>
+				<li><a href="__ROOT__/Company" <eq name="nav_type" value="company">class="active"</eq>>公司信息</a>|</li>
+				<li class="last"><a href="__ROOT__/Contact" <eq name="nav_type" value="contact">class="active"</eq>>联系我们</a></li>
+			</ul>
+			<div class="row-sub-nav row-about clearfix <neq name="nav_type" value="about">hide</neq>">
+				<include file="Public/aboutNav.html" />
+			</div>
+            <div class="row-sub-nav row-about clearfix <neq name="nav_type" value="goods">hide</neq>">
+				<include file="Public/goodsNav.html" />
+			</div>
+			<div class="row-sub-nav row-about clearfix <neq name="nav_type" value="company">hide</neq>">
+				<include file="Public/companyNav.html" />
+			</div>
+			<div class="row-sub-nav row-about clearfix <neq name="nav_type" value="contact">hide</neq>">
+				<include file="Public/contactNav.html" />
+			</div>
+		</div>
+
+	</div>
+</div>
+<block name="wraper"></block>
+<div class="footer">
+	<div class="wrap">
+		{$company.copyright}<br>
+		<a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">京ICP证080047号</a>
+	</div>
+</div>
+<script src="__PUBLIC__/js/lib/171.js"></script>
+<script src="__PUBLIC__/js/lib/base.js"></script>
+<script src="__PUBLIC__/js/combo/ui.js"></script>
+<block name="js"></block>
+</body>
+</html>

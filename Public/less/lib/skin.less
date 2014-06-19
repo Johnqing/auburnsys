@@ -1,0 +1,24 @@
+@import "../public/metho";
+.yahei,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	font-family: "microsoft yahei";
+}
+
+.lh-20(@lh:1px){
+	line-height: 20px + @lh;
+}
+
+.lh-22{
+	.lh-20(2px);
+}
+.lh-25{
+	.lh-20(5px);
+}
+.lh-30{
+	.lh-20(10px);
+}

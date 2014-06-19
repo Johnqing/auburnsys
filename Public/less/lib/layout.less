@@ -1,0 +1,39 @@
+@import "../public/metho";
+
+.wrap{
+	margin: 0 auto;
+	width: 936px;
+}
+
+.span1{
+
+}
+
+.span2{
+
+}
+
+.span3{
+	width: 290px;
+}
+
+/* margin
+======================*/
+
+.mr(@m:1px){
+	margin-right: 5px * @m;
+}
+
+.mr5x2{
+	.mr(2px);
+}
+
+.mb5(@m:1px){
+	margin-bottom: 5px * @m;
+}
+.mb5x2{
+	.mb5(2px)
+}
+.mb5x4{
+	.mb5(4px);
+}

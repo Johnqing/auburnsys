@@ -1,0 +1,35 @@
+<extend name="Public/base" />
+<block name="css">
+	<link rel="stylesheet" href="__PUBLIC__/css/combo/about.css"/>
+</block>
+<block name="wraper">
+	<div class="wrap mb5x4">
+		<img src="__PUBLIC__/img/banner/about.jpg" alt="关于我们"/>
+	</div>
+	<div class="wrap clearfix">
+
+		<div class="sub-nav fl">
+			<h2>About Us</h2>
+			<include file="Public/aboutNav.html" />
+		</div>
+
+		<div class="sub-wrap fr about-box">
+			<div class="m1 s-mt">
+				<h2>认证</h2>
+				<ul class="breadcrumb">
+					<li>
+						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
+					</li>
+					<li>
+						<a href="__ROOT__/About">关于奥本</a> <span class="divider">&gt;</span>
+					</li>
+					<li class="active">认证</li>
+				</ul>
+			</div>
+			<div class="cpt-box">
+				{$company.compliant}
+			</div>
+		</div>
+
+	</div>
+</block>
