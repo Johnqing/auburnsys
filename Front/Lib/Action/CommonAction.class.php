@@ -16,7 +16,7 @@ class CommonAction extends Action{
         //网站栏目
         $cate = M('cate');
         //公司配置
-        $company = M('Company');
+        $company = M('About');
 
         //公共查询
         $cate = checkTrip($cate->order('px asc')->select());

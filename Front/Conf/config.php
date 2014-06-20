@@ -2,7 +2,7 @@
 $db = include './Inc/config.inc.php';
 $myConf = array(
     //调式期关闭缓存
-    'TMPL_CACHE_ON' => false,
+    'TMPL_CACHE_ON' => true,
     //URL模式 PathInfo模式
     'URL_MODEL'=> 1,
     //伪静态

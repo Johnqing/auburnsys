@@ -10,4 +10,6 @@ Front/Runtime/
 
 Adm/Runtime/
 
-Inc/
+Inc/config.inc.php
+
+Admin/
