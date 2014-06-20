@@ -1,0 +1,20 @@
+<extend name="Public:base" />
+
+<block name="top">
+	<include file="Public:top"/>
+</block>
+<block name="nav">
+	<include file="Public:nav"/>
+</block>
+<block name="wraper">
+		<div class="login-box">
+			<div class="error"></div>
+			<volist name="list" id="vo">
+			<dl>
+				<dt>{$vo.name}</dt>
+				<dd><img src="{$vo.pic}" alt=""/></dd>
+				<dd><a href="{:U('addCS')}?id={$vo.id}">修改</a></dd>
+			</dl>
+			</volist>
+		</div>
+</block>

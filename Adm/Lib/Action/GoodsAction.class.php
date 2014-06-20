@@ -79,13 +79,8 @@ class GoodsAction extends CommonAction{
         // 文件上传配置
         import('ORG.Net.UploadFile');
         // 设置附件上传类型
-        if($goods_type == 'img'){
-            $allowExts = array('jpg', 'gif', 'png', 'jpeg');
-            $allowTypes = array('image/jpg','image/jpeg','image/pjpeg','image/png','image/gif');
-        } else {
-            $allowExts = array('ext_pdf');
-            $allowTypes = array('ext_pdf/pdf');
-        }
+        $allowExts = array('jpg', 'gif', 'png', 'jpeg', 'pdf');
+        $allowTypes = array('image/jpg','image/jpeg','image/pjpeg','image/png','image/gif', 'application/pdf');
 
         // 设置附件上传目录
         $savePath =  'Public/Uploads/goods/';

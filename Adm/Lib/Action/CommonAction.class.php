@@ -195,5 +195,35 @@ class CommonAction extends Action{
         echo "{'err':'".$this->jsonString($error)."','msg':".$message."}";
 
     }
+    protected  function fileUpload($url){
+        // 文件上传配置
+        import('ORG.Net.UploadFile');
+        // 设置附件上传类型
+        $allowExts = array('jpg', 'gif', 'png', 'jpeg', 'pdf');
+        $allowTypes = array('image/jpg','image/jpeg','image/png','image/gif', 'application/pdf');
 
+        // 设置附件上传目录
+        $savePath =  'Public/Uploads/'.$url.'/';
+        $saveRule = 'uniqid';
+
+        if(!is_dir($savePath)){
+            mkdir($savePath, 0777);
+        }
+        // 实例化
+        $upload = new UploadFile();
+        $upload->maxSize = 1000000;
+        $upload->allowExts = $allowExts;
+        $upload->allowTypes = $allowTypes;
+        $upload->savePath = $savePath;
+        $upload->saveRule = $saveRule;
+        // 开始上传
+        if(!$upload->upload()){
+            $this->error($upload->getErrorMsg());
+        } else {
+            $info = $upload->getUploadFileInfo();
+        }
+        $info = $info[0];
+        $info['savename'] = '/Public/Uploads/'.$url.'/'.$info['savename'];
+        return $info;
+    }
 }
