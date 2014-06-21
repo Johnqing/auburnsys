@@ -56,7 +56,6 @@ class CompanyAction extends CommonAction{
     }
 
     public function caseStudy(){
-
         $cs = M('case_study');
 
         $list = checkTrip($cs->order('id desc')->select());
@@ -92,6 +91,7 @@ class CompanyAction extends CommonAction{
         $data['cs_desc'] = $cont['desc'];
 
         $model = M('case_study');
+
         if(isset($_FILES['pic'])){
             $pic_info = $this->fileUpload('company');
             $data['pic'] = $pic_info['savename'];
