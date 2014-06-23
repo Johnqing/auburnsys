@@ -1,0 +1,10 @@
+{
+    "name": "licai",
+    "version": "0.1.0",
+    "readmeFilename": "README.md",
+    "main": "./feBuild.js",
+    "dependencies": {
+        "less2css": "*",
+        "coffee2js": "*"
+    }
+}

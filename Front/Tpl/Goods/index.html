@@ -13,7 +13,7 @@
 			<include file="Public:goodsNav" />
 		</div>
 
-		<div class="sub-wrap fr patent-box about-box">
+		<div class="sub-wrap fr goods-list-box">
 			<div class="m1 s-mt">
 				<h2>ALL</h2>
 				<ul class="breadcrumb">
@@ -33,10 +33,12 @@
 					</div>
 					<div class="s-m">
 						<div class="mt">{$vo.goods_name}</div>
-						<p>{$vo.goods_desc|msubstr=0,200}<a href="__ROOT__/Goods/detail?id={$key}">更多详情</a></p>
-						<volist name="vo.pdfs" id="pdf">
-							<a href="{$pdf.pdf_url}">{$pdf.pdf_name}</a>
+						<p>{$vo.goods_desc|msubstr=0,200}<a href="__ROOT__/Goods/detail?id={$key}">[更多详情]</a></p>
+						<ul class="pdfs-box">
+						<volist name="vo.pdf" id="pdf">
+							<li><a href="{$pdf.pdf_url}">{$pdf.pdf_name}</a></li>
 						</volist>
+						</ul>
 					</div>
 				</div>
 			</volist>

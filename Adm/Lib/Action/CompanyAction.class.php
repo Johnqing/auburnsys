@@ -89,7 +89,6 @@ class CompanyAction extends CommonAction{
 
         $data['name'] = $cont['name'];
         $data['cs_desc'] = $cont['desc'];
-
         $model = M('case_study');
 
         if(isset($_FILES['pic'])){

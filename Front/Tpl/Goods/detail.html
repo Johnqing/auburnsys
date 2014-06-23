@@ -13,7 +13,7 @@
 			<include file="Public:goodsNav" />
 		</div>
 
-		<div class="sub-wrap fr patent-box about-box">
+		<div class="sub-wrap fr goods-dt-box">
 			<div class="m1 s-mt">
 				<h2>{$good.goods_name|msubstr=0,20}</h2>
 				<ul class="breadcrumb">
@@ -27,21 +27,19 @@
 				</ul>
 			</div>
 			<div class="dt-tit">
-				<div class="fl">
-					<span class="time">{$good.goods_addtime}</span>
+				<div class="fl pdf-time-box">
+					<span class="time">{$good.goods_addtime|date='Y.m.d',###}</span>
 					<div class="pdf-box">
 						<volist name="good.pdf" id="vo">
-							<a href="{$vo.pdf_url}">{$vo.pdf_name}</a>
+							<a href="{$vo.pdf_url}" title="{$vo.pdf_name}">{$vo.pdf_name}</a>
 						</volist>
 					</div>
 				</div>
-				<div class="fl tit">
-					{$good.goods_name}
-				</div>
+				<div class="fl tit">{$good.goods_name}</div>
 			</div>
 
 			<div class="dt-cont">
-				<img src="{$good.goods_pics}" alt=""/>
+				<img src="{$good.goods_pics}" alt="" class="goods-img"/>
 				<div class="dt-text">
 					{$good.goods_desc}
 				</div>
