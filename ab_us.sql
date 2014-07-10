@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2014-06-20 20:34:00
+-- Generation Time: 2014-07-10 17:44:01
 -- 服务器版本： 5.6.17
 -- PHP Version: 5.5.12
 
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `ab_case_study` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `name` varchar(200) NOT NULL,
   `pic` varchar(200) NOT NULL,
-  `cs_desc` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `cs_desc` mediumtext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='案例分析' AUTO_INCREMENT=5 ;
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `ab_case_study` (
 INSERT INTO `ab_case_study` (`id`, `name`, `pic`, `cs_desc`) VALUES
 (1, '水泥厂提高了技术，改进了操作，降低了成本', 'http://www.auburnsys.cn/imges/changzi/shuini.jpg', 'Auburn 系统\r\n\r\n问题 – 采用目视检测进行排放监控 \r\n    自2002年6月发布新硅酸盐水泥行业最高可实现的控制技术标准(PC – MACT)以来，更多的水泥厂被要求对排放实施频繁的目视检测。而现今水泥厂中大多物料流均为干燥粉末，因此对排放实行控制对符合环境要求至关重要。 需大量劳动力的每日目视检测通常按6分钟的间隔实施（方法22）。 而采用成本低廉的、连续的、电子监测方法便可使检验人员从目视检测工作中解脱出来。\r\n\r\n解决方案 \r\n    目前许多业主都采用安装Auburn先进的Tribo颗粒物监测系统来实现其监测的自动化。 TRIBO. d2是通过双线回路供电的仪表装置，可直接与 \r\n工厂的PLC系统和Auburn多点排放检测数据采集器连接。 \r\n简单优雅的设计理念，TRIBO.d2使无论在任何场合运行的除尘器都无需再进行目视检测。 操作人员通过传输的4-20mA数据便可监控各台除尘器状态，无需再实施目视检测。 TRIBO.d2同时还对排量实施持续监控，比每6分钟进行一次目视检测的传统方法节约了大量劳动力。 \r\n    大多州和联邦环保机构都允许采用Tribo产品取代'),
 (3, '啊啊啊', 'Uploads/company/53a477b406c69.png', '<table width="100" border="0" style="color: rgb(0, 0, 0); font-family: Simsun;"><tbody><tr><td align="center" valign="top" bgcolor="#FFFFFF"><p><img src="http://www.auburnsys.cn/imges/yanchang.jpg" width="844" height="363" alt="" /></p><table width="100%" border="0" cellpadding="0" cellspacing="15"><tbody><tr><td width="50%" align="left" valign="top"><p align="left" class="wenben-cn" style="line-height: 24px;"><strong><u>背景<br /></u></strong>&nbsp;&nbsp;&nbsp;&nbsp;烟草加工是一个本身就是充满粉尘的行业。其加工过程从开始到结束'),
-(4, 'aaa', '/auburnsys/Adm.php/Company/Public/Uploads/company/53a47a41e8d00.jpg', '<span style="background-color: rgb(255, 204, 153);">asdsad sad sads ad</span>');
+(4, '铝电解机构、年节约$200,000', '/Public/Uploads/company/53a589479e6b4.jpg', '<table width="100" border="0" style="color: rgb(0, 0, 0); font-family: Simsun;"><tbody><tr><td align="center" valign="top" bgcolor="#FFFFFF"><p><img src="http://www.auburnsys.cn/imges/lvchang.jpg" width="844" height="129" alt="" /></p><table width="100%" border="0" cellspacing="15"><tbody><tr><td width="50%" height="138" align="center"><img src="http://www.auburnsys.cn/imges/lvchang0.jpg" width="371" height="136" alt="" /></td><td width="50%" rowspan="2" align="left" valign="top"><p><span class=');
 
 -- --------------------------------------------------------
 
@@ -87,17 +87,37 @@ CREATE TABLE IF NOT EXISTS `ab_company_patent` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `pt_time` varchar(15) NOT NULL,
   `title` mediumtext NOT NULL COMMENT '专利名称',
-  `inventors` varchar(200) NOT NULL COMMENT '专利发明者',
+  `inventors` varchar(500) NOT NULL COMMENT '专利发明者',
   `summary` mediumtext NOT NULL COMMENT '摘要',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='公司专利' AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='公司专利' AUTO_INCREMENT=80 ;
 
 --
 -- 转存表中的数据 `ab_company_patent`
 --
 
 INSERT INTO `ab_company_patent` (`id`, `pt_time`, `title`, `inventors`, `summary`) VALUES
-(6, '1997年12月13日', 'US4063153:汽液相比测定', 'Dechene;Ronald L.,Boxford,MA<br>\nGrimaldi;Frank G.,Tewksbury,MA<br>\nNewton;Robert E.,Tewksbury,MA', '混相导电流体（如热水）中液相/汽相的相对量是根据电导率定值确定的，而电导率是通过在流程横截面内相互重叠的几个分布方向上、通过向其中的旋转场矢量提供大约1-30千赫的交流电压而测定的。用测定的旋转场电导率测定值除以一种液体的导电率测定值，可确定液相率（从整体减去汽相率），测量向在横截面外围交替分布的带极对的电极组施加多相交流电产生的旋转电场，测定确定流量横截面的电极结构和介入绝缘体，并为严厉的流动条件和流体环境留有余地，以提供可靠、长期有效的测量。');
+(1, '1997年1与21日', 'US5596275：聚丙烯核磁共振实时分析', 'Dechene;Ronald L.,Boxford,MA<br>\r\nSmith;Thomas B.,Atkinson,NH<br>\r\nMarino;Scott A.,Haverhill,MA Tache;<br>\r\nRonald J.,Malden,MA Roy;Ajoy K.,<br>\r\nDanvers,MA', '本发明涉及一种磁共振成像方法，该方法使用可移动射频接收线圈组扫过在成像方案中需要成像的相关区域。该方法特别包括：根据选定的成像方案，通过施用射频脉冲和磁场梯度激励相关区域内的核磁化，在扫过该区域附近的可移动射频接收线圈组的同时，接收射频接收用线圈中由受激核磁化产生的射频成像信号，（其中，所述可移动射频接收用线圈组包括射频接收用线圈和用以反复确定射频接收用线圈的三维位置和三维方位的方法），在接收射频成像信号的过程中，反复确定射频接收用线圈的三维位置和三维方位，按照接收的磁共振成像信号以及射频接收用线圈的三维的三维位置和三维方位重构相关区域的磁共振图像。位置确定方法更适宜包括至少三条磁共振有效微线圈。本发明同时也涉及一种可移动射频接收用线圈组和磁共振装置，两者都适合用于本发明所述的方法。'),
+(2, '1996年6月25日', 'US5530350：实时、工业应用模式磁共振分析', 'Dechene;Ronald L.,Boxford,MA<br>\r\nSmith;Thomas B.,Atkinson,NH<br>\r\nMarino;Scott A.,Haverhill,MA Roy<br>\r\nAjoy K.,Danvers,MA', '一种用于工业测量的脉冲磁共振系统，其包含试样通量系统（P,LI,V1,V2）及用户系统控制器（104），用以建立数字化自由感应衰减曲线（C），根据该曲线，采用马夸特——李文柏格叠代法确定Abragam分量，慢速改进高斯分量和指数分量，并用回归法使FID曲线分量与靶核相互关联。'),
+(3, '1995年9月5日', 'US5448172:带直流电漂移补偿的摩擦电仪器', 'Dechene;Ronald L.,Boxford,MA Newton;<br>\r\nRobert E.,Tewksbury,MA Swartzentruber;<br>\r\nRon L.,Somerville,MA', '一种微处理器（48）控制的摩擦电仪器，具有探针污垢检测、零位偏差调节和温度补偿的功能。系统的可编程序性为增强的操作员控制器和操作员监控器而配备，使系统可重新编程，以减少仪器的停机时间。'),
+(4, '1995年4月18日', 'US5408181:测量聚合物特性的核磁共振系统', 'Dechene;Ronald L.,Boxford,MA<br>\r\nSmith;Thomas B.,Atkinson,NH Day;<br>\r\nDavid R.,Charlestown,MA Tanzer;<br>\r\nChristian I.,Bedford,MA Marino;Scott<br>\r\nA.,Haverhill,MA Tache;Ronald J.,<br>\r\nMalden,MA R', '一种用于从工业过程中析取的、处于迁移增强温度（非晶态聚合物等于或大于玻璃化温度，晶体状和半晶体状聚合物为结晶转变温度）的聚合物材料的脉冲核磁共振分析系统。采用核磁共振技术测量试样，取得关于粘性与熔融指数或熔体流动（与平均分子量有关）的结果。<br>\r\n核磁共振系统（处于或未处于共振中）包括：试样通量系统（P,LI,V1,V2）及用户系统控制器（104），用以建立数字化自由感应衰减曲线（C），根据该曲线，采用线性或非线性回归法确定分量函数，使曲线分量与靶核及塑料中的流量相互关联。通过在迁移率增强温度（通常情况下，较工业生产过程的温度有所升高）下进行核磁共振过程并充分地将温度维持在该高温下，使核磁共振导出常数及自由感应衰减曲线的等式与前述聚合物特性的相关性有大幅度的增进。'),
+(5, '1994年6月7日', 'US5319308：具备非线性回归方法的实时磁共振分析', 'Dechene;Ronald L.,Boxford,MA<br>\r\nSmith;Thomas B.,Atkinson,NH<br>\r\nMarino;Scott A.,Haverhill,MA Tache;<br>\r\nRonald J.,Malden,MA Roy;Ajoy,<br>\r\nDanvers,MA', '一种用于脉冲磁共振系统和程序，其包含试样通量系统（P,LI,V1,V2）及用户系统控制器（104），用以建立数字化自由感应衰减曲线（C），根据该曲线，采用非线性回归法确定分量函数，使曲线分量与靶核相互关联。'),
+(6, '1994年4月12日', 'US5302897:聚丙烯核磁共振实时分析', 'Tache;Ronald J.,Malden,MA<br>\r\nRoy;Ajoy,Danvers,MA<br>\r\nDechene;Ronald L.,Boxford,MA<br>\r\nSmith;Thomas B.,Atkinson,NH', '一种用于工业测量的脉冲磁共振系统，其包含试样通量系统（P,LI,V1,V2）及用户系统控制器（104），用以建立数字化自由感应衰（FID）减曲线（C），根据该曲线，采用马夸特——李文柏格叠代法确定Abragam分量，慢速改进高斯分量和指数分量，并用回归法使FID曲线分量与靶核相互关联。'),
+(7, '1995年3月14日', 'US双分量系统中的联机质量流量计量', 'Dechene;Ronald L.,Boxford,MA<br>\r\nDay;David R.,Boxford,MA Smith;<br>\r\nThomas B.,Atkinson, NH', '一种用于测量由双分量材料组成的稀浆混合料的质量流量的装置和程序，如催化剂固体微粒（第一分量）的流动或载液中的微滴（第二分量）。将稀浆混合料加入工业生产液流（10）或批式反应器。测量一个分量的流速及体积分数，并与所测量分量的已知比重及稀浆混合料所流动的管道的几何尺寸相结合，以确定该分量的质量流量。流速采用使沿流程两个分离位置的信号相互关联的方法测得，体积分数采用结合混合物中各种材料的已知介电常数和混合物的已测电容而测得。电容根据在某些应用中与流动物质隔离，而在其它应用中不与流动物质隔离的电极来测量。在最后计算中，使温度（9）和压力（11）均衡，通过反馈，质量流量结果用于控制装载材料的数量。同样，使用减影技术去除干扰电力线噪音，以提高灵敏度。'),
+(8, '1994年11月22日', 'US5367260：通过固定频率的脉冲核磁共振获取塑料制品中流量（熔融指数）的装置', 'Dechene;Ronald L.,Boxford,MA<br>\r\nSmith;Thomas B.,Atkinson,NH<br>\r\nMarino;Scott A.,Haverhill,MA Tache;<br>\r\nRonald J.,Malden,MA Roy;Ajoy K.,<br>\r\nDanvers,MA', '一种脉冲磁共振系统和程序，其包括空气幕（137）、试样通量系统（P,LI,V1,V2）及用户系统控制器（104），用以建立数字化自由感应衰减曲线（C），根据该曲线，采用线性或非线性回归法确定分量函数，使曲线分量与靶核及塑料中的流量相互关联，其中塑料包括MI、FRR聚乙烯以及MF聚丙烯。'),
+(9, '1994年4月12日', 'US5302896：实时、工业应用模式磁共振分析', 'Dechene;Ronald L.,Boxford,MA<br>\r\nSmith;Thomas B.,Atkinson,NH<br>\r\nMarino;Scott A.,Haverhill,MA Roy;<br>\r\nAjoy K.,Danvers,MA', '一种用于工业测量的脉冲磁共振系统，其包含试样通量系统（P,LI,V1,V2）及用户系统控制器（104），用以建立数字化自由感应衰减曲线（C），根据该曲线，采用马夸特——李文柏格叠代法确定Abragam分量，高斯分量和指数分量，并用回归法使曲线分量与靶核相互关联。'),
+(10, '1994年2月15日', 'US5287061：联机摩擦电探针污染检测器', 'Dechene;Ronald L., Boxford, MA<br>\r\nNewton;Robert E.,Tewksbury,MA', '一种改良的输入电路（9），用于接收来自摩擦电探针（2）的信号。该电路提供倍率、最低点和探针污染信息，并允许在不使探针和仪器脱机的情况下查证所述信息。'),
+(11, '1992年11月10日', 'US5162103：工业用核磁共振分析样品支持器压实器', 'Dechene;Ronald L., Boxford, MA<br>\r\nGirgenti;Russell S.,Hamilton,MA', '一种样品支持和压实器系统，用于工业核磁共振分析（或相似）仪器，可以装载与压紧微粒不均匀的样品。该系统包括配有内套（26）和撞锤（30）的管状支持器/压实器构件（20），全部用不与激励核磁共振场相互作用，并且不干扰样品分析的材料制成，系统提供处理不同材料的可重复的、简单的方式，以确保可靠的核磁共振分析。\r\n'),
+(12, '1992年3月10日', 'US5095275：长期微粒监控装置', 'Dechene;Ronald L.,Boxford,MA Newton;<br>\r\nRobert E.,Tewksbury,MA Girgenti;Russell<br>\r\nS.,Sorth Hamilton,MA', '一种气流中微粒的监控装置，其包含一个探针（12）、用于侦查探针电活动的电路（14）和一台使探针插入或缩回气流的制动器（20），电路定期测量缩回的探针，并自我调节以补偿变化的探测器特征。该装置还配备探针清洁和保护工具（30，32，34，36），工作时与自校验仪相互作用。自校验仪测试包括基线、倍率及灵敏度监控。\r\n'),
+(13, '1991年10月8日', 'US5054325：碰撞特性流量计量', 'Dechene;Ronald L.,Boxford,MA Smith;<br>\r\nThomas B.,Atkinson,NH Newton;<br>\r\nRobert E.,Tewksbury,MA', '一种与摩擦电探针（P）配合使用的粒子分析装置（10），包括方法（18，20，22，24，26）用以分析与探针产生的个别粒子碰撞，有效地测量在探针区域存在悬浮固体微粒的流体的流动状态。\r\n'),
+(14, '1991年9月17日', 'US5049819：实时、工业应用模式磁共振分析', 'Dechene;Ronald L.,Boxford,MA<br>\r\nSmith;Thomas B.,Atkinson,NH Rou;<br>\r\nAjoy,Danvers,MA', '一种用于工业的脉冲磁共振系统，其包含试样通量系统（P,LI,V1,V2）磁场调节器（120，124）和热调节器（134-138及142-146）。共振由线圈（100）产生，由收发器（104）激励，与共振中的试样和磁场相互作用，产生接收数字化自由感应衰减曲线形状（C），该曲线形状自动分解为高斯分量和指数分量，提供带重复测试次序和热控制的简化高速计算方法，系统地将误差降到最小，以确保对来自生产过程的试样中的连续靶核量的可靠测定，并利用基于哈恩自旋回波的设备自动地调节一个或更多所分析分量的分析。\r\n'),
+(15, '1991年5月14日', 'US5015954：实时、工业应用模式磁共振分析', 'Dechene;Ronald L.,Boxford,MA<br>\r\nSmith;Thomas B.,Atkinson,NH<br>\r\nMarino;Scott A.,Haverhill,MA', '一种用于工业的磁共振系统，其包含试样通量系统（P,LI,V1,V2）磁场调节器（120，124）和热调节器（134-138及142-146）。共振由线圈（100）产生，由收发器（104）激励，与共振中的试样和磁场相互作用，产生接收数字化自由感应衰减曲线形状（C），该曲线形状合成为约束分量（高斯分量）和非约束分量（指数分量），与带重复测试次序和热控制的简化高速计算方法配合，系统地将误差降到最小，以确保对来自产生过程的试样中的连续靶核量的可靠测定。\r\n'),
+(16, '1990年2月27日', 'US4904944：带有本质上为线性输出的模拟输出的流量测量装置', 'Dechene;Ronald L.,Boxford,MA<br>\r\nGrimaldi;Frank G.,Tewksbury,MA', '一种流量测量装置，其包括一个由同轴电缆（2）连接到带有电流至电压转换器（10）的控制电路的探针（1），绝对值电路（12），自动归零开关和集成电路（11，27）和产生与探针上流量相应的模拟输出的电压至电流电路（18）。\r\n'),
+(17, '1988年9月27日', 'US4774453：绝缘流体流量的检测\r\n', 'Dechene;Ronald L.,Boxford,MA<br>\r\nGrimaldi;Frank G.,Tewksbury,MA<br>\r\nNewton;Robert E.,Tewksbury,MA', '一种管道（1）内低温流体的流速测量装置，以电极上带有摩擦电、产生流量的测定信号经过相互隔离的上游和下游电极，该信号指向一相关器（2），该相关器将信号的时基移至相应的各个信号，并反复地使转移的信号增殖，直到获得最大的增殖产物，其中时基与最大增殖产物在电极之间的流动通过时间有关。\r\n'),
+(18, '1987年12月22日', 'US4714890:带有本质上为线性输出的模拟输出的流量测量装置\r\n', 'Dechene;Ronald L.,Boxford,MA<br>\r\nGrimaldi;Frank G.,Tewksbury,MA', '一种流量测量装置，其包括一个由同轴电缆（2）连接到带有电流至电压转换器（10）的控制电路的探针（1），绝对值电路（12），自动归零开关和集成电路（11，27）和产生与探针上流量相应的模拟输出的电压至电流电路（18）。\r\n'),
+(19, '1981年9月22日', 'US4291273:流型检测\r\n', 'Dechene;Ronald L.,Boxford,MA<br>\r\nGrimaldi;Frank G.,Tewksbury,MA<br>\r\nNewton;Robert E.,Tewksbury,MA', '混相流体的流型通过利用周向位移电场，测量产生的作为流型识别标志的，某个径电导/弦电导比值组合的径电导和弦电导而测定。\r\n'),
+(20, '1981年9月8日', 'US4288741:含有电容性及抵抗性的导电组分的流体，其流体空隙分数的电测量', 'Dechene;Ronald L.,Boxford,MA Newton;<br>\r\nRobert E.,Tewksbury,MA\r\n', '其中混合有固相或气相的流体，其流体或流体的体积百分比用以下方法测定：向流体施加振荡电压，将产生的未被所分析混相介质中可获得的更大的传导电流所屏蔽的传导电流及电容性电流分离，以实现非流体体积百分比的正确、有效的测定。\r\n'),
+(21, '1978年2月14日', 'US4074184：非导电汽/固或液相比测定\r\n', 'Dechene;Ronald L.,Boxford,MA<br>\r\nGrimaldi;Frank G.,Tewksbury,MA<br>\r\nNewton;Robert E.,Tewksbury,MA', '混相非导电流体（如油或燃料）中液相/汽相的相对量，或非导电微粒和气体的混流（如气力输运塑料颗粒和其他材料）中固体/气体的相对量由电导率测定值确定，电导率的测量是在流程横截面以内相互重叠的几个分布方向上、通过向其中的旋转场矢量提供大约1-30千赫的交流电压而进行，用旋转场产生的电导率测定值除以一种液体的电导率测定值，以确定相率（从整体减去汽相率），测量按顺序旋转六块在横截面外围均匀间隔的金属板的电气位置产生的旋转电场，测定确定流量测量横截面或在非导电流量管的外围间隔的金属板结构和绝缘体，并为严厉的流动条件和流体环境留有余地，以提供可靠、长期的测量。\r\n');
 
 -- --------------------------------------------------------
 
@@ -108,16 +128,27 @@ INSERT INTO `ab_company_patent` (`id`, `pt_time`, `title`, `inventors`, `summary
 CREATE TABLE IF NOT EXISTS `ab_customer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ct_name` varchar(100) NOT NULL,
-  `ct_desc` varchar(200) NOT NULL,
+  `ct_desc` mediumtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='主要客户' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='主要客户' AUTO_INCREMENT=13 ;
 
 --
 -- 转存表中的数据 `ab_customer`
 --
 
 INSERT INTO `ab_customer` (`id`, `ct_name`, `ct_desc`) VALUES
-(1, 'General Motors', '');
+(1, 'General Motors', ''),
+(2, 'Nucor Steel', ''),
+(3, 'IPSCO Steel\r\n', ''),
+(4, 'US Steel\r\n', ''),
+(5, 'Lafarge Cement\r\n', ''),
+(6, 'Thermal Ceramics\r\n', ''),
+(7, 'Alcan', ''),
+(8, 'Alcoa', ''),
+(9, 'Black River Power Generation\r\n', ''),
+(10, 'TXU Power Generation\r\n', ''),
+(11, 'Philip Morris\r\n', ''),
+(12, 'MicroPul\r\n', '');
 
 -- --------------------------------------------------------
 
@@ -127,9 +158,9 @@ INSERT INTO `ab_customer` (`id`, `ct_name`, `ct_desc`) VALUES
 
 CREATE TABLE IF NOT EXISTS `ab_goods` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `goods_name` varchar(100)  CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `goods_pics` varchar(1000)  CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `goods_desc` text  CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `goods_name` varchar(100) NOT NULL,
+  `goods_pics` varchar(1000) NOT NULL,
+  `goods_desc` mediumtext NOT NULL,
   `goods_addtime` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='商品表' AUTO_INCREMENT=23 ;
@@ -173,18 +204,31 @@ INSERT INTO `ab_goods_pdf` (`goods_id`, `id`, `pdf_name`, `pdf_url`) VALUES
 
 CREATE TABLE IF NOT EXISTS `ab_history_overview` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `overview_desc` varchar(50) NOT NULL,
+  `overview_desc` mediumtext NOT NULL,
   `overview_time` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='历史概况' AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='历史概况' AUTO_INCREMENT=16 ;
 
 --
 -- 转存表中的数据 `ab_history_overview`
 --
 
 INSERT INTO `ab_history_overview` (`id`, `overview_desc`, `overview_time`) VALUES
-(1, 'assdsadsadasd', '1990'),
-(2, 'assdsadsadasd', '1999');
+(1, '奥本作为一家科研承包公司成立了。第一个产品，微电荷（triboelectric）流动/断流检测器，安装在气流输送生产线上。\r\n', '1973'),
+(2, '奥本在世界上第一次把微电荷（triboelectric）技术应用到环保行业上，用来监测布袋除尘器的粉尘排放。\r\n', '1978'),
+(3, '第一次奥本的微电荷（triboelectric）粉尘排放监测仪与光学粉尘监测仪（不透明计）的对比试验显示了微电荷（triboelectric）技术极大的优越性。\r\n', '1983'),
+(4, '奥本获得了NASA的，在航天飞机燃料加注过程中，《利用微电荷（Triboelectric）现象测量液态制冷剂流量》的研究合同。\r\n', '1985'),
+(5, '奥本发布了IMR产品，创造性地把核磁共振应用到了高分子聚合物结晶度测量的工业领域。\r\n', '1986'),
+(6, '奥本发布了Correflow产品，用于两相流中质量流量的测量，这项技术成为了世界上现行的高分子聚合反应炉催化剂加料测量的标准方法。\r\n', '1993'),
+(7, '奥本发布了世界上第一套基于PC的，网络化的微电荷（triboelectric）粉尘排放监测系统 TRIBO.link。这个系统基于控制局域网络（CAN），整合了包括粉尘在内的，采集除尘器运行的各种参数的传感器。\r\n', '1995'),
+(8, '在次级熔铅行业的《最大可控排放技术（MACT）》标准中[iii]，和《纤维滤料袋漏检测指导》文件中[iv]，美国联邦环保署（USEPA）首次认可并推荐微电荷（triboelectric）粉尘排放监测技术。这些文件现在仍是除尘器运行袋漏检测的正式标准。\r\n', '1996'),
+(9, '为了主攻环保市场，奥本出售了IMR和Correflow部门，重新集中精力到微电荷（triboelectric）产品上。\r\n', '1998'),
+(10, '奥本发布了TRIBO.dgd，世界上第一台利用数字信号处理算法和最新DSP技术的，全数字式微电荷（triboelectric）粉尘排放监测仪。\r\n', '2000'),
+(11, '奥本成为OPC foundation 的会员。OPC foundation是一个工业仪器和自控系统生产商的协会，其目的是提高工控软件的连接性和交互性。\r\n', '2002'),
+(12, '奥本发布了低成本，易安装，双线4-20毫安微电荷（triboelectric）粉尘排放监测仪TRIBO.d2 （model 3400）。\r\n', '2004'),
+(13, '美国联邦环保署（USEPA）正式批准可以用微电荷（triboelectric）粉尘排放监测仪取代不透光仪作为环保执法的标准。\r\n', '2005'),
+(14, '完整的污染物排放信息系统 – Auburn.vision 的发布，标志着奥本进入了污染物排放数据管理和系统整合领域。\r\n', '2005'),
+(15, '奥本在中国北京成立代表处。\r\n', '2008');
 
 -- --------------------------------------------------------
 
@@ -240,7 +284,7 @@ INSERT INTO `ab_news` (`id`, `news_tit`, `news_con`, `add_time`, `add_ip`, `auth
 CREATE TABLE IF NOT EXISTS `ab_pr` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
-  `pr_desc` varchar(200) NOT NULL,
+  `pr_desc` mediumtext NOT NULL,
   `pr_url` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='论文与报道' AUTO_INCREMENT=10 ;
@@ -279,7 +323,7 @@ CREATE TABLE IF NOT EXISTS `ab_user` (
 --
 
 INSERT INTO `ab_user` (`id`, `username`, `userpwd`, `name`, `logintime`, `loginnums`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 1403280059, 58);
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 1405001248, 59);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
