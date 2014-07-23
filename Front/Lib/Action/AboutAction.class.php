@@ -19,13 +19,21 @@ class AboutAction extends CommonAction {
      * 专利
      */
     public function patent(){
+        // 导入分页类
+        import("ORG.Util.Page");
         $patent = M('company_patent');
 
-        $patent_list = checkTrip($patent->order('id desc') -> select());
+        // 获取条数
+        $count = $patent->count();
+        // 分页 10条分
+        $page = new Page($count, 5);
+
+        $patent_list = checkTrip($patent->order('id desc') ->limit($page->firstRow.','.$page->listRows)-> select());
         $this->assign(array(
             'nav_type' => 'about',
             'about_type' => 'patent',
-            'patent_list' => $patent_list
+            'patent_list' => $patent_list,
+            'page' => $page->show()
         ));
         $this->display();
     }

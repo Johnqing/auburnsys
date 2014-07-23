@@ -78,7 +78,7 @@
 * @type{width,float}
 */
 .opacity(@n:50){
-	filter: alpha(opacity=@n);
+	filter: ~"alpha(opacity=@{n})";
 	-moz-opacity:@n/100;
 	opacity: @n/100;
 }
@@ -98,7 +98,7 @@
 	background:rgba(@r, @g, @b, @a);
 	/*兼容ie*/
 	@cl:argb(rgba(@r, @g, @b, @a));
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=@cl,endColorstr=@cl);
+	filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{cl},endColorstr=@{cl})";
 }
 /**
 * 等高

@@ -1,6 +1,6 @@
 <extend name="Public:base" />
 <block name="css">
-	<link rel="stylesheet" href="__PUBLIC__/css/combo/goods.css"/>
+	<link rel="stylesheet" href="__PUBLIC__/css/combo/company.css"/>
 </block>
 <block name="wraper">
 	<div class="wrap mb5x4">
@@ -13,7 +13,7 @@
 			<include file="Public:goodsNav" />
 		</div>
 
-		<div class="sub-wrap fr patent-box about-box">
+		<div class="sub-wrap fr about-box cs-detail-box">
 			<div class="m1 s-mt">
 				<h2>案例分析</h2>
 				<ul class="breadcrumb">
@@ -23,11 +23,12 @@
 					<li>
 						<a href="__ROOT__/Company">公司信息</a> <span class="divider">&gt;</span>
 					</li>
-					<li class="active">{$cont.name|msubstr=0,20}</li>
+					<li class="active">案例分析</li>
 				</ul>
 			</div>
 
 			<div class="dt-cont">
+				<h1>{$cont.name}</h1>
 				{$cont.cs_desc}
 			</div>
 
