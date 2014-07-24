@@ -29,11 +29,15 @@
 			<volist name="gds_ls" id="vo">
 				<div class="m">
 					<div class="img">
-						<img src="__PUBLIC__/Uploads/goods/{$vo.goods_pics}" alt=""/>
+						<img src="{$vo.goods_pics}" alt=""/>
 					</div>
 					<div class="s-m">
 						<div class="mt">{$vo.goods_name}</div>
-						<p>{$vo.goods_desc|msubstr=0,200}<a href="__ROOT__/Goods/detail?id={$key}">[更多详情]</a></p>
+						<p>{$vo.goods_desc|msubstr=0,200}
+							<notempty name="vo.goods_detail">
+								<a href="__ROOT__/Goods/detail?id={$vo.id}">[更多详情]</a>
+							</notempty>
+						</p>
 						<ul class="pdfs-box">
 						<volist name="vo.pdf" id="pdf">
 							<li><a href="{$pdf.pdf_url}">{$pdf.pdf_name}</a></li>

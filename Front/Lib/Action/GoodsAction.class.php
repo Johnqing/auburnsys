@@ -42,7 +42,6 @@ class GoodsAction extends CommonAction{
         $goods = M('goods');
         $good = checkTrip($goods->where('id='.$id)->find());
         $list = checkTrip($goods->order('id desc')->select());
-
         $goods_pdf = M('goods_pdf');
         $good['pdf'] = checkTrip($goods_pdf->where('goods_id='.$id)->select());
 
