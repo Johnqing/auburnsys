@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2014-07-24 18:06:33
+-- Generation Time: 2014-07-31 17:25:15
 -- 服务器版本： 5.6.17
 -- PHP Version: 5.5.12
 
@@ -19,6 +19,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `ab_us`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `ab_agents`
+--
+
+CREATE TABLE IF NOT EXISTS `ab_agents` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `contact` varchar(100) NOT NULL,
+  `tel` varchar(100) NOT NULL,
+  `fax` varchar(100) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `address` mediumtext NOT NULL,
+  `zipcode` int(8) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- 转存表中的数据 `ab_agents`
+--
+
+INSERT INTO `ab_agents` (`id`, `name`, `city`, `contact`, `tel`, `fax`, `email`, `address`, `zipcode`) VALUES
+(1, '营口中润节能环保科技发展有限公司', '辽宁，吉林，黑龙江', '张晓明 先生', '0417-6669777', '0417-6669797', 'zhongrun@auburnsys.cn', '营口老边区路南镇崔家村', 115000),
+(2, '北京市众信科贸发展公司', '山东', '管少清 先生', '13910772515　010-67480319 ', '010-67486428', 'shandong@auburnsys.cn', '北京市朝阳区大羊坊路十八里店2068号', 100023),
+(3, '云南新益工程技术发展有限公司', '云南', '郑大立 先生', '13808750868　0871-5357632', '0871-5353525', 'yunnanxy@auburnsys.cn', '云南省昆明市西昌路692号', 650032),
+(4, '煤炭科学研究院重庆分院\r\n国家煤炭安全技术工程研究中心\r\n', '奥本系统技术合作伙伴	', '王自亮 教授\r\n', '023-65239372 ', '023-65227775', 'wangziliang@auburnsys.cn', '', 0);
 
 -- --------------------------------------------------------
 

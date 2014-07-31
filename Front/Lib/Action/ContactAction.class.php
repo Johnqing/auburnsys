@@ -8,10 +8,14 @@
 class ContactAction extends CommonAction{
     public function index(){
 
-        $this->common();
+        $agents = M('agents');
 
+        $agents = $agents->order('id desc') ->select();
+
+        $this->common();
         $this->assign(array(
-            'contact_type'=>'index'
+            'contact_type'=>'index',
+            'agents'=> $agents
         ));
         $this->display();
     }
