@@ -33,21 +33,25 @@
 				<li><a href="__APP__" <eq name="nav_type" value="index">class="active"</eq>>首页</a>|</li>
 				<li><a href="{:U('About/index')}" <eq name="nav_type" value="about">class="active"</eq>>关于奥本</a>|</li>
 				<!-- <li><a href="{:U('News/index')}" <eq name="nav_type" value="news">class="active"</eq>>公司新闻</a>|</li> -->
-				<li><a href="{:U('Goods/index')}" <eq name="nav_type" value="goods">class="active"</eq>>产品</a>|</li>
-				<li><a href="{:U('Company/index')}" <eq name="nav_type" value="company">class="active"</eq>>公司信息</a>|</li>
-				<li class="last"><a href="{:U('Contact/index')}" <eq name="nav_type" value="contact">class="active"</eq>>联系我们</a></li>
+				<li><a href="{:U('Goods/index')}" <eq name="nav_type" value="goods">class="active"</eq>>产品介绍</a>|</li>
+				<li><a href="{:U('Casestudy/index')}" <eq name="nav_type" value="company">class="active"</eq>>案例分析</a>|</li>
+				<li><a href="{:U('Contact/index')}" <eq name="nav_type" value="contact">class="active"</eq>>联系我们</a>|</li>
+				<li class="last"><a href="{:U('Help/index')}" <eq name="nav_type" value="help">class="active"</eq>>帮助中心</a></li>
 			</ul>
 			<div class="row-sub-nav row-about clearfix <neq name="nav_type" value="about">hide</neq>">
 				<include file="Public:aboutNav" />
 			</div>
-            <!--<div class="row-sub-nav row-about clearfix <neq name="nav_type" value="goods">hide</neq>">-->
-				<!--<include file="Public:goodsNav" />-->
-			<!--</div>-->
+            <div class="row-sub-nav row-about clearfix <neq name="nav_type" value="goods">hide</neq>">
+				<include file="Public:goodsNav" />
+			</div>
 			<div class="row-sub-nav row-about clearfix <neq name="nav_type" value="company">hide</neq>">
-				<include file="Public:companyNav" />
+				<include file="Public:case_study_nav" />
 			</div>
 			<div class="row-sub-nav row-about clearfix <neq name="nav_type" value="contact">hide</neq>">
 				<include file="Public:contactNav" />
+			</div>
+			<div class="row-sub-nav row-about clearfix <neq name="nav_type" value="help">hide</neq>">
+				<include file="Public:helpNav" />
 			</div>
 		</div>
 

@@ -9,7 +9,6 @@ class GoodsAction extends CommonAction{
         $count = $goods->count();
         // 分页 10条分
         $page = new Page($count, 5);
-        $list = checkTrip($goods->order('id desc')->select());
         $gds_ls = checkTrip($goods->order('goods_addtime desc')->limit($page->firstRow.','.$page->listRows)->select());
 
         foreach($gds_ls as $key=>$val){
@@ -20,7 +19,6 @@ class GoodsAction extends CommonAction{
         $this->assign(array(
             'nav_type' => 'goods',
             'goods_type' => 'index',
-            'list' => $list,
             'gds_ls' => $gds_ls,
             'page' => $page->show()
         ));
@@ -41,15 +39,20 @@ class GoodsAction extends CommonAction{
 
         $goods = M('goods');
         $good = checkTrip($goods->where('id='.$id)->find());
-        $list = checkTrip($goods->order('id desc')->select());
         $goods_pdf = M('goods_pdf');
         $good['pdf'] = checkTrip($goods_pdf->where('goods_id='.$id)->select());
 
         $this->assign(array(
             'nav_type' => 'goods',
             'goods_type' => $id,
-            'list' => $list,
             'good' => $good
+        ));
+        $this->display();
+    }
+    public function app(){
+        $this->assign(array(
+            'nav_type'=>'goods',
+            'goods_type'=>'app'
         ));
         $this->display();
     }

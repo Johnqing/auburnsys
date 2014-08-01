@@ -12,7 +12,7 @@
 	<meta name="Description" content="<?php echo ($company["desc"]); ?>" />
 	<link rel="stylesheet" href="__PUBLIC__/css/combo/base.css"/>
 	
-	<link rel="stylesheet" href="__PUBLIC__/css/combo/about.css"/>
+	<link rel="stylesheet" href="__PUBLIC__/css/combo/help.css"/>
 
 	<script>
 		var GV = {
@@ -102,49 +102,41 @@
 </div>
 
 	<div class="wrap mb5x4">
-		<img src="__PUBLIC__/img/banner/about.jpg" alt="关于我们"/>
+		<img src="__PUBLIC__/img/banner/help.jpg" alt="帮助中心"/>
 	</div>
 	<div class="wrap clearfix">
 
 		<div class="sub-nav fl">
-			<h2>About Us</h2>
+			<h2>Help</h2>
 			<ul class="mc">
-	<li class="first <?php if(($about_type) == "index"): ?>active<?php endif; ?>">
-	<a href="<?php echo U('About/index');?>">历史回顾</a>
+	<li class="first <?php if(($help_type) == "index"): ?>active<?php endif; ?>">
+	<a href="<?php echo U('Help/index');?>">常见问题</a>
 	</li>
-	<li <?php if(($about_type) == "patent"): ?>class="active"<?php endif; ?>>
-	<a href="<?php echo U('About/patent');?>">公司专利</a>
-	</li>
-	<li <?php if(($about_type) == "compliant"): ?>class="active"<?php endif; ?>>
-	<a href="<?php echo U('About/compliant');?>">认证</a>
-	</li>
-	<li <?php if(($about_type) == "service"): ?>class="active"<?php endif; ?>>
-	<a href="<?php echo U('About/service');?>">服务宗旨</a>
-	</li>
-	<li <?php if(($about_type) == "greetings"): ?>class="active"<?php endif; ?>>
-	<a href="<?php echo U('About/greetings');?>">总裁致辞</a>
-	</li>
-	<li <?php if(($about_type) == "culture"): ?>class="active"<?php endif; ?>>
-	<a href="<?php echo U('About/culture');?>">企业文化</a>
+	<li class="<?php if(($help_type) == "app"): ?>active<?php endif; ?>">
+	<a href="<?php echo U('Help/tech');?>">奥本技术</a>
 	</li>
 </ul>
 		</div>
 
-		<div class="sub-wrap fr about-box">
+		<div class="sub-wrap fr m-help-box">
 			<div class="m1 s-mt">
-				<h2>认证</h2>
+				<h2>常见问题</h2>
 				<ul class="breadcrumb">
 					<li>
 						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
 					</li>
 					<li>
-						<a href="<?php echo U('About/index');?>">关于奥本</a> <span class="divider">&gt;</span>
+						<a href="<?php echo U('Help/index');?>">帮助中心</a> <span class="divider">&gt;</span>
 					</li>
-					<li class="active">认证</li>
+					<li class="active">常见问题</li>
 				</ul>
 			</div>
-			<div class="cpt-box">
-				<?php echo ($company["compliant"]); ?>
+			<div class="m-help-ct">
+				<?php if(is_array($help_list)): $i = 0; $__LIST__ = $help_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><dl>
+						<dt><?php echo ($vo["title"]); ?></dt>
+						<dd class="hide"><?php echo ($vo["content"]); ?></dd>
+					</dl><?php endforeach; endif; else: echo "" ;endif; ?>
+				<div class="ui-page-nav"><?php echo ($page); ?></div>
 			</div>
 		</div>
 

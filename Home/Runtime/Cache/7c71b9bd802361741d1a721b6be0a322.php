@@ -34,9 +34,9 @@
 			<ul class="nav clearfix">
 				<li><a href="__APP__" <?php if(($nav_type) == "index"): ?>class="active"<?php endif; ?>>首页</a>|</li>
 				<li><a href="<?php echo U('About/index');?>" <?php if(($nav_type) == "about"): ?>class="active"<?php endif; ?>>关于奥本</a>|</li>
-				<li><a href="<?php echo U('News/index');?>" <?php if(($nav_type) == "news"): ?>class="active"<?php endif; ?>>公司新闻</a>|</li>
+				<!-- <li><a href="<?php echo U('News/index');?>" <?php if(($nav_type) == "news"): ?>class="active"<?php endif; ?>>公司新闻</a>|</li> -->
 				<li><a href="<?php echo U('Goods/index');?>" <?php if(($nav_type) == "goods"): ?>class="active"<?php endif; ?>>产品</a>|</li>
-				<li><a href="<?php echo U('Company/index');?>" <?php if(($nav_type) == "company"): ?>class="active"<?php endif; ?>>公司信息</a>|</li>
+				<li><a href="<?php echo U('Casestudy/index');?>" <?php if(($nav_type) == "company"): ?>class="active"<?php endif; ?>>公司信息</a>|</li>
 				<li class="last"><a href="<?php echo U('Contact/index');?>" <?php if(($nav_type) == "contact"): ?>class="active"<?php endif; ?>>联系我们</a></li>
 			</ul>
 			<div class="row-sub-nav row-about clearfix <?php if(($nav_type) != "about"): ?>hide<?php endif; ?>">
@@ -66,18 +66,18 @@
 	<li class="first <?php if(($goods_type) == "index"): ?>active<?php endif; ?>">
 	<a href="<?php echo U('Goods/index');?>">all</a>
 	</li>
-	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li <?php if($vo["id"] == $goods_type): ?>class="active"<?php endif; ?>>
-			<a href="<?php echo U('Goods/detail');?>?id=<?php echo ($vo["id"]); ?>"><?php echo (msubstr($vo["goods_name"],0,20)); ?></a>
-		</li><?php endforeach; endif; else: echo "" ;endif; ?>
+	<li class="<?php if(($goods_type) == "app"): ?>active<?php endif; ?>">
+	<a href="<?php echo U('Goods/app');?>">应用范围</a>
+	</li>
 </ul>-->
 			<!--</div>-->
 			<div class="row-sub-nav row-about clearfix <?php if(($nav_type) != "company"): ?>hide<?php endif; ?>">
 				<ul class="mc">
 	<li class="first <?php if(($company_type) == "caseStudy"): ?>active<?php endif; ?>">
-	<a href="<?php echo U('Company/index');?>">案例分析</a>
+	<a href="<?php echo U('Casestudy/index');?>">案例分析</a>
 	</li>
 	<li class="first <?php if(($company_type) == "index"): ?>active<?php endif; ?>">
-	    <a href="<?php echo U('Company/report');?>">论文与报道</a>
+	    <a href="<?php echo U('Casestudy/report');?>">论文与报道</a>
 	</li>
 </ul>
 			</div>
@@ -94,7 +94,7 @@
 </div>
 
     <div class="wrap mb5x4">
-        <img src="__PUBLIC__/img/banner/company.png" alt="公司信息"/>
+	    <img src="__PUBLIC__/img/banner/company.png" alt="公司信息"/>
     </div>
     <div class="wrap clearfix">
 
@@ -102,38 +102,33 @@
             <h2>Products</h2>
             <ul class="mc">
 	<li class="first <?php if(($company_type) == "caseStudy"): ?>active<?php endif; ?>">
-	<a href="<?php echo U('Company/index');?>">案例分析</a>
+	<a href="<?php echo U('Casestudy/index');?>">案例分析</a>
 	</li>
 	<li class="first <?php if(($company_type) == "index"): ?>active<?php endif; ?>">
-	    <a href="<?php echo U('Company/report');?>">论文与报道</a>
+	    <a href="<?php echo U('Casestudy/report');?>">论文与报道</a>
 	</li>
 </ul>
         </div>
 
         <div class="sub-wrap fr company-box">
             <div class="m1 s-mt">
-                <h2>论文与报道</h2>
+                <h2>案例分析</h2>
                 <ul class="breadcrumb">
                     <li>
                         <a href="__APP__">首页</a> <span class="divider">&gt;</span>
                     </li>
                     <li>
-                        <a href="<?php echo U('Company/index');?>">公司信息</a> <span class="divider">&gt;</span>
+                        <a href="<?php echo U('Casestudy/index');?>">公司信息</a> <span class="divider">&gt;</span>
                     </li>
-                    <li class="active">论文与报道</li>
+                    <li class="active">案例分析</li>
                 </ul>
             </div>
-            <div class="pr-box">
+            <div class="cs-box clearfix">
                 <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><dl>
-                        <dt><a href="<?php echo U('Company/CSDetail');?>?id=<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></a></dt>
-                        <dd>
-	                        <p><?php echo ($vo["pr_desc"]); ?></p>
-	                        <span class="time"><?php echo ($vo["pr_time"]); ?></span>
-                        </dd>
+                        <dt><a href="<?php echo U('Casestudy/CSDetail');?>?id=<?php echo ($vo["id"]); ?>"><img src="__ROOT__<?php echo ($vo["pic"]); ?>" alt=""/></a></dt>
+                        <dd><?php echo ($vo["name"]); ?></dd>
                     </dl><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
-
-            <div class="ui-page-nav"><?php echo ($page); ?></div>
         </div>
 
     </div>

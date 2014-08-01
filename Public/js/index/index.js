@@ -1,3 +1,5 @@
 ;(function(){
-	$("#slt").Slider();
+	$("#slt").Slider({
+		time: 8
+	});
 })();

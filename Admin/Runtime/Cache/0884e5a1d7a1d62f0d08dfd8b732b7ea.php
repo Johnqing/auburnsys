@@ -60,13 +60,13 @@
 </ul>
 
 <ul class="pr">
-	<li><a href="<?php echo U('Company/index');?>">论文与报道管理</a></li>
-	<li><a href="<?php echo U('Company/add');?>">添加论文与报道</a></li>
+	<li><a href="<?php echo U('Casestudy/index');?>">论文与报道管理</a></li>
+	<li><a href="<?php echo U('Casestudy/add');?>">添加论文与报道</a></li>
 </ul>
 
 <ul class="cs">
-	<li><a href="<?php echo U('Company/caseStudy');?>">案例分析管理</a></li>
-	<li><a href="<?php echo U('Company/addCS');?>">添加案例分析</a></li>
+	<li><a href="<?php echo U('Casestudy/caseStudy');?>">案例分析管理</a></li>
+	<li><a href="<?php echo U('Casestudy/addCS');?>">添加案例分析</a></li>
 </ul>
 
 <ul class="goods">

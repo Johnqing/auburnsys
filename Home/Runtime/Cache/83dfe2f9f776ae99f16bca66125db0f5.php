@@ -36,7 +36,7 @@
 				<li><a href="<?php echo U('About/index');?>" <?php if(($nav_type) == "about"): ?>class="active"<?php endif; ?>>关于奥本</a>|</li>
 				<li><a href="<?php echo U('News/index');?>" <?php if(($nav_type) == "news"): ?>class="active"<?php endif; ?>>公司新闻</a>|</li>
 				<li><a href="<?php echo U('Goods/index');?>" <?php if(($nav_type) == "goods"): ?>class="active"<?php endif; ?>>产品</a>|</li>
-				<li><a href="<?php echo U('Company/index');?>" <?php if(($nav_type) == "company"): ?>class="active"<?php endif; ?>>公司信息</a>|</li>
+				<li><a href="<?php echo U('Casestudy/index');?>" <?php if(($nav_type) == "company"): ?>class="active"<?php endif; ?>>公司信息</a>|</li>
 				<li class="last"><a href="<?php echo U('Contact/index');?>" <?php if(($nav_type) == "contact"): ?>class="active"<?php endif; ?>>联系我们</a></li>
 			</ul>
 			<div class="row-sub-nav row-about clearfix <?php if(($nav_type) != "about"): ?>hide<?php endif; ?>">
@@ -74,10 +74,10 @@
 			<div class="row-sub-nav row-about clearfix <?php if(($nav_type) != "company"): ?>hide<?php endif; ?>">
 				<ul class="mc">
 	<li class="first <?php if(($company_type) == "caseStudy"): ?>active<?php endif; ?>">
-	<a href="<?php echo U('Company/index');?>">案例分析</a>
+	<a href="<?php echo U('Casestudy/index');?>">案例分析</a>
 	</li>
 	<li class="first <?php if(($company_type) == "index"): ?>active<?php endif; ?>">
-	    <a href="<?php echo U('Company/report');?>">论文与报道</a>
+	    <a href="<?php echo U('Casestudy/report');?>">论文与报道</a>
 	</li>
 </ul>
 			</div>

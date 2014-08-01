@@ -1,15 +1,5 @@
 <?php
-class CompanyAction extends CommonAction{
-    public function report(){
-        $pr = M('pr');
-
-        $this->pageNav($pr);
-
-        $this->assign(array(
-            'company_type' => 'index'
-        ));
-        $this->display('index');
-    }
+class CasestudyAction extends CommonAction{
     // 案例分析
     public function index(){
         $caseStudy = M('case_study');
@@ -19,7 +9,7 @@ class CompanyAction extends CommonAction{
             'company_type' => 'caseStudy'
         ));
 
-        $this->display('caseStudy');
+        $this->display();
     }
 
     public function CSDetail(){

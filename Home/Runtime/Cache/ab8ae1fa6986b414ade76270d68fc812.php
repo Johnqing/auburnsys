@@ -12,7 +12,7 @@
 	<meta name="Description" content="<?php echo ($company["desc"]); ?>" />
 	<link rel="stylesheet" href="__PUBLIC__/css/combo/base.css"/>
 	
-	<link rel="stylesheet" href="__PUBLIC__/css/combo/about.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/combo/company.css"/>
 
 	<script>
 		var GV = {
@@ -101,54 +101,39 @@
 	</div>
 </div>
 
-	<div class="wrap mb5x4">
-		<img src="__PUBLIC__/img/banner/about.jpg" alt="关于我们"/>
-	</div>
-	<div class="wrap clearfix">
+    <div class="wrap mb5x4">
+	    <img src="__PUBLIC__/img/banner/company.png" alt="案例分析"/>
+    </div>
+    <div class="wrap clearfix">
 
-		<div class="sub-nav fl">
-			<h2>About Us</h2>
-			<ul class="mc">
-	<li class="first <?php if(($about_type) == "index"): ?>active<?php endif; ?>">
-	<a href="<?php echo U('About/index');?>">历史回顾</a>
-	</li>
-	<li <?php if(($about_type) == "patent"): ?>class="active"<?php endif; ?>>
-	<a href="<?php echo U('About/patent');?>">公司专利</a>
-	</li>
-	<li <?php if(($about_type) == "compliant"): ?>class="active"<?php endif; ?>>
-	<a href="<?php echo U('About/compliant');?>">认证</a>
-	</li>
-	<li <?php if(($about_type) == "service"): ?>class="active"<?php endif; ?>>
-	<a href="<?php echo U('About/service');?>">服务宗旨</a>
-	</li>
-	<li <?php if(($about_type) == "greetings"): ?>class="active"<?php endif; ?>>
-	<a href="<?php echo U('About/greetings');?>">总裁致辞</a>
-	</li>
-	<li <?php if(($about_type) == "culture"): ?>class="active"<?php endif; ?>>
-	<a href="<?php echo U('About/culture');?>">企业文化</a>
+        <div class="sub-nav fl">
+            <h2>Case</h2>
+            <ul class="mc">
+	<li class="first <?php if(($company_type) == "caseStudy"): ?>active<?php endif; ?>">
+	<a href="<?php echo U('Company/index');?>">案例分析</a>
 	</li>
 </ul>
-		</div>
+        </div>
 
-		<div class="sub-wrap fr about-box">
-			<div class="m1 s-mt">
-				<h2>认证</h2>
-				<ul class="breadcrumb">
-					<li>
-						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
-					</li>
-					<li>
-						<a href="<?php echo U('About/index');?>">关于奥本</a> <span class="divider">&gt;</span>
-					</li>
-					<li class="active">认证</li>
-				</ul>
-			</div>
-			<div class="cpt-box">
-				<?php echo ($company["compliant"]); ?>
-			</div>
-		</div>
+        <div class="sub-wrap fr company-box">
+            <div class="m1 s-mt">
+                <h2>案例分析</h2>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="__APP__">首页</a> <span class="divider">&gt;</span>
+                    </li>
+                    <li class="active">案例分析</li>
+                </ul>
+            </div>
+            <div class="cs-box clearfix">
+                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><dl>
+                        <dt><a href="<?php echo U('Company/CSDetail');?>?id=<?php echo ($vo["id"]); ?>"><img src="__ROOT__<?php echo ($vo["pic"]); ?>" alt=""/></a></dt>
+                        <dd><?php echo ($vo["name"]); ?></dd>
+                    </dl><?php endforeach; endif; else: echo "" ;endif; ?>
+            </div>
+        </div>
 
-	</div>
+    </div>
 
 <div class="footer">
 	<div class="wrap">

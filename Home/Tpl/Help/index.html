@@ -1,0 +1,41 @@
+<extend name="Public:base" />
+<block name="css">
+	<link rel="stylesheet" href="__PUBLIC__/css/combo/help.css"/>
+</block>
+<block name="wraper">
+	<div class="wrap mb5x4">
+		<img src="__PUBLIC__/img/banner/help.jpg" alt="帮助中心"/>
+	</div>
+	<div class="wrap clearfix">
+
+		<div class="sub-nav fl">
+			<h2>Help</h2>
+			<include file="Public:helpNav" />
+		</div>
+
+		<div class="sub-wrap fr m-help-box">
+			<div class="m1 s-mt">
+				<h2>常见问题</h2>
+				<ul class="breadcrumb">
+					<li>
+						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
+					</li>
+					<li>
+						<a href="{:U('Help/index')}">帮助中心</a> <span class="divider">&gt;</span>
+					</li>
+					<li class="active">常见问题</li>
+				</ul>
+			</div>
+			<div class="m-help-ct">
+				<volist name="help_list" id="vo">
+					<dl>
+						<dt>{$vo.title}</dt>
+						<dd class="hide">{$vo.content}</dd>
+					</dl>
+				</volist>
+				<div class="ui-page-nav">{$page}</div>
+			</div>
+		</div>
+
+	</div>
+</block>
