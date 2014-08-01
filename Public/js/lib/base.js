@@ -20,5 +20,10 @@ var fst = {
 				config.error && config.error(res.message);
 			}
 		});
+	},
+	tpl: function(tp, data){
+		return tp.replace(/{{(.*?)}}/g, function ($1, $2) {
+			return data[$2] || '';
+		});
 	}
 }

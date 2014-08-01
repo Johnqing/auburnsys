@@ -1,0 +1,50 @@
+<extend name="Public:base" />
+<block name="css">
+	<link rel="stylesheet" href="__PUBLIC__/css/combo/about.css"/>
+</block>
+<block name="wraper">
+	<div class="wrap mb5x4">
+		<img src="__PUBLIC__/img/banner/about.jpg" alt="关于我们"/>
+	</div>
+	<div class="wrap clearfix">
+
+		<div class="sub-nav fl">
+			<h2>About Us</h2>
+			<include file="Public:aboutNav" />
+		</div>
+
+		<div class="sub-wrap fr patent-box about-box">
+			<div class="m1 s-mt">
+				<h2>公司专利</h2>
+				<ul class="breadcrumb">
+					<li>
+						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
+					</li>
+					<li>
+						<a href="{:U('About/index')}">关于奥本</a> <span class="divider">&gt;</span>
+					</li>
+					<li class="active">公司专利</li>
+				</ul>
+			</div>
+			<volist name="patent_list" id="vo">
+				<div class="m">
+					<div class="mt">{$vo.title}</div>
+					<div class="inventors">
+						<span class="t1">发明人：</span>
+						<span class="d1">{$vo.inventors}</span>
+					</div>
+					<div class="time">
+						<span class="t1">发明时间：</span>
+						<span class="d1">{$vo.pt_time}</span>
+					</div>
+					<div class="summary">
+						<span class="t1">发明摘要：</span>
+						<p class="d2">{$vo.summary}</p>
+					</div>
+				</div>
+			</volist>
+			<div class="ui-page-nav">{$page}</div>
+		</div>
+
+	</div>
+</block>

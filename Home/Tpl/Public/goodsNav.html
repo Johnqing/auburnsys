@@ -1,0 +1,10 @@
+<ul class="mc">
+	<li class="first <eq name="goods_type" value="index">active</eq>">
+	<a href="{:U('Goods/index')}">all</a>
+	</li>
+	<volist name="list" id="vo">
+		<li <if condition="$vo.id eq $goods_type">class="active"</if>>
+			<a href="{:U('Goods/detail')}?id={$vo.id}">{$vo.goods_name|msubstr=0,20}</a>
+		</li>
+	</volist>
+</ul>
