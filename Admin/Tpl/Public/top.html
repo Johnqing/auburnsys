@@ -1,0 +1,20 @@
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<a href="__ROOT__/admin.php" class="brand">{$config.name}</a>
+			<ul class="nav ace-nav pull-right">
+				<li class="light-blue">
+					<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+						<span class="user-info">
+							<small>欢迎,</small>{$config.username}
+						</span>
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+						<li><a href="{:U('Login/loginout/')}"><i class="fa fa-off"></i>退出</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

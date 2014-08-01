@@ -1,0 +1,29 @@
+<extend name="Public:base" />
+
+<block name="top">
+	<include file="Public:top"/>
+</block>
+<block name="nav">
+	<include file="Public:nav"/>
+</block>
+<block name="wraper">
+<form action="{:U('addOverview')}" method="post">
+	<input type="hidden" name="id" value="{$id}"/>
+	<div class="login-box">
+		<div class="error"></div>
+		<ul>
+			<li>
+				<span>时间</span>
+				<input name="overview_time" class="tex" value="{$list.time}" />
+			</li>
+			<li>
+				<span>内容</span>
+				<textarea name="overview_desc" class="tex">{$list.overview_desc}</textarea>
+			</li>
+			<li class="btns-box">
+				<input type="submit" value="提交"/>
+			</li>
+		</ul>
+	</div>
+</form>
+</block>

@@ -1,0 +1,24 @@
+<extend name="Public:base" />
+
+<block name="top">
+	<include file="Public:top"/>
+</block>
+<block name="nav">
+	<include file="Public:nav"/>
+</block>
+<block name="wraper">
+	<div class="add-news">
+		<a href="{:U('modifyPatent')}">添加新专利</a>
+	</div>
+
+	<div class="old-content">
+		<ul>
+			<volist name="list" id="vo">
+				<li>
+					<span>{$vo.name}</span>
+					<a href="{:U('modifyPatent')}?id={$vo.id}">修改</a>
+				</li>
+			</volist>
+		</ul>
+	</div>
+</block>

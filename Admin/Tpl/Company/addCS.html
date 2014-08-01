@@ -1,0 +1,41 @@
+<extend name="Public:base" />
+
+<block name="top">
+	<include file="Public:top"/>
+</block>
+<block name="nav">
+	<include file="Public:nav"/>
+</block>
+<block name="wraper">
+	<form action="{:U('modfiyCS')}" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="{$id}"/>
+		<div class="login-box">
+			<div class="error"></div>
+			<ul>
+				<li>
+					<span>名称：</span>
+					<input type="text" name="name" class="inp" value="{$cs.name}"/>
+				</li>
+				<li>
+					<span>文件上传：</span>
+					<input type="file" name="pic"/>
+					<img src="{$cs.pic}" alt=""/>
+				</li>
+				<li>
+					<span>描述：</span>
+					<textarea name="desc" data-editor="news_cont">{$cs.cs_desc}</textarea>
+				</li>
+				<li>
+					<div class="btn-box">
+						<input type="submit" value="提交"/>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</block>
+
+<block name="js">
+	<script src="__PUBLIC__/admin/js/xheditor/xheditor-1.1.14-zh-cn.min.js"></script>
+	<script src="__PUBLIC__/admin/js/page/editor.js"></script>
+</block>

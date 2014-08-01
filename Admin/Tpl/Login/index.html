@@ -1,0 +1,33 @@
+<extend name="Public:base" />
+<block name="wraper">
+	<form action="{:U('check')}" method="post" id="login">
+		<div class="login-box">
+			<div class="error"></div>
+			<ul>
+				<li>
+					<span>用户名</span>
+					<input type="text" name="uname" class="box"/>
+				</li>
+				<li>
+					<span>密码</span>
+					<input type="password" name="upwd" class="box"/>
+				</li>
+				<li>
+					<span>验证码</span>
+					<input type="text" name="verify" class="box" id="yzm" style="width:50px;"/>
+					<img src="__URL__/verify" id="verify" data-id="__URL__/verify"/>
+				</li>
+				<li class="btns-box">
+					<input type="submit" value="登录"/>
+				</li>
+			</ul>
+		</div>
+	</form>
+</block>
+<block name="js">
+	<script src="__PUBLIC__/admin/js/lib/login.js"></script>
+	<script>
+		fst.Login.index('#login');
+		fst.Login.verify('#verify');
+	</script>
+</block>
