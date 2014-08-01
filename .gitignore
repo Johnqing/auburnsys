@@ -4,8 +4,6 @@ node_modules/
 
 *.bak
 
-Front/Runtime/
+Home/Runtime/
 
-Adm/Runtime/
-
-Inc/config.inc.php
+Admin/Runtime/
