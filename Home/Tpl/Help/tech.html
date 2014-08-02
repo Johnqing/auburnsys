@@ -15,7 +15,7 @@
 
 		<div class="sub-wrap fr m-help-box">
 			<div class="m1 s-mt">
-				<h2>常见问题</h2>
+				<h2>奥本技术</h2>
 				<ul class="breadcrumb">
 					<li>
 						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
@@ -23,11 +23,11 @@
 					<li>
 						<a href="{:U('Help/index')}">帮助中心</a> <span class="divider">&gt;</span>
 					</li>
-					<li class="active">常见问题</li>
+					<li class="active">奥本技术</li>
 				</ul>
 			</div>
-			<div class="m-help-ct">
-				<volist name="help_list" id="vo">
+			<div class="m-help-ct m-tech-box">
+				<volist name="list" id="vo">
 					<dl>
 						<dt>{$vo.title}</dt>
 						<dd class="hide">{$vo.content}</dd>
@@ -39,6 +39,7 @@
 
 	</div>
 </block>
+
 <block name="js">
 	<script type="text/javascript" src="__PUBLIC__/js/page/help.js"></script>
 </block>

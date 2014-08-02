@@ -91,7 +91,7 @@
 	<li class="first <?php if(($help_type) == "index"): ?>active<?php endif; ?>">
 	<a href="<?php echo U('Help/index');?>">常见问题</a>
 	</li>
-	<li class="<?php if(($help_type) == "app"): ?>active<?php endif; ?>">
+	<li class="<?php if(($help_type) == "tech"): ?>active<?php endif; ?>">
 	<a href="<?php echo U('Help/tech');?>">奥本技术</a>
 	</li>
 </ul>
