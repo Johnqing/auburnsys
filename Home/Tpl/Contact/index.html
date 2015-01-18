@@ -19,7 +19,7 @@
 				<h2>联系我们</h2>
 				<ul class="breadcrumb">
 					<li>
-						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
+						<a href="__APP__">首页</a><span class="divider">&gt;</span>
 					</li>
 					<li class="active">联系我们</li>
 				</ul>
@@ -29,7 +29,7 @@
 			<table class="tbl-type2 mgb_40" cellspacing="0">
 				<tr>
 					<th width="188">
-						<span>Address</span>
+						<span>地址</span>
 					</th>
 					<td class="last">
 						<span>{$company.address}</span>
@@ -37,69 +37,31 @@
 				</tr>
 				<tr>
 					<th>
-						<span>Phone</span>
+						<span>总部电话</span>
 					</th>
 					<td class="last">
-						<span>{$company.mobile}</span>
+						<span>{$company.fex}</span>
 					</td>
 				</tr>
-				<tr>
+
+                <tr>
+                    <th>
+                        <span>手机</span>
+                    </th>
+                    <td class="last">
+                        <span>{$company.mobile}</span>
+                    </td>
+                </tr>
+
+                <tr>
 					<th>
-						<span>email</span>
+						<span>Email</span>
 					</th>
 					<td class="last">
 						<span><a href="mailto:{$company.email}">{$company.email}</a></span>
 					</td>
 				</tr>
 			</table>
-			<volist name="agents" id="vo">
-				<div class="city">{$vo.city}</div>
-				<div class="company">{$vo.name}</div>
-				<table class="tbl-type2 mgb_40" cellspacing="0">
-					<tr>
-						<th width="188">
-							<span>Contact</span>
-						</th>
-						<td class="last">
-							<span>{$vo.contact}</span>
-						</td>
-					</tr>
-					<notempty name="vo.address">
-					<tr>
-						<th width="188">
-							<span>Address</span>
-						</th>
-						<td class="last">
-							<span>{$vo.address}</span>
-						</td>
-					</tr>
-					</notempty>
-					<tr>
-						<th>
-							<span>Phone</span>
-						</th>
-						<td class="last">
-							<span>{$vo.tel}</span>
-						</td>
-					</tr>
-					<tr>
-						<th>
-							<span>email</span>
-						</th>
-						<td class="last">
-							<span><a href="mailto:{$vo.email}">{$vo.email}</a></span>
-						</td>
-					</tr>
-					<tr>
-						<th>
-							<span>Fax</span>
-						</th>
-						<td class="last">
-							<span>{$vo.fax}</span>
-						</td>
-					</tr>
-				</table>
-			</volist>
 		</div>
 	</div>
 </block>

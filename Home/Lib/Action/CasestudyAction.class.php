@@ -12,7 +12,7 @@ class CasestudyAction extends CommonAction{
         $this->display();
     }
 
-    public function CSDetail(){
+    public function csdetail(){
         $id = $this->_param('id');
 
         $caseStudy = M('case_study');

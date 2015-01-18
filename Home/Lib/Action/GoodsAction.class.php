@@ -9,7 +9,7 @@ class GoodsAction extends CommonAction{
         $count = $goods->count();
         // 分页 10条分
         $page = new Page($count, 5);
-        $gds_ls = checkTrip($goods->order('goods_addtime desc')->limit($page->firstRow.','.$page->listRows)->select());
+        $gds_ls = checkTrip($goods->order('id')->limit($page->firstRow.','.$page->listRows)->select());
 
         foreach($gds_ls as $key=>$val){
             $id = $val['id'];
@@ -49,10 +49,28 @@ class GoodsAction extends CommonAction{
         ));
         $this->display();
     }
-    public function app(){
+    public function measure(){
         $this->assign(array(
             'nav_type'=>'goods',
-            'goods_type'=>'app'
+            'goods_type'=>'measure'
+        ));
+        $this->display();
+    }
+
+    public function app(){
+        $this->assign(array(
+            'app_type'=>'index',
+            'nav_type'=>'app',
+        ));
+        $this->display();
+    }
+    public function tech(){
+        $techs = M('tech');
+        $techs = checkTrip($techs->order('id desc')->select());
+        $this->assign(array(
+            'nav_type' => 'app',
+            'app_type' => 'tech',
+            'list' => $techs
         ));
         $this->display();
     }

@@ -18,14 +18,4 @@ class HelpAction extends CommonAction {
         ));
         $this->display();
     }
-    public function tech(){
-        $techs = M('tech');
-        $techs = checkTrip($techs->order('id desc')->select());
-        $this->assign(array(
-            'nav_type' => 'help',
-            'help_type' => 'tech',
-            'list' => $techs
-        ));
-        $this->display();
-    }
 }

@@ -8,8 +8,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>{$company.name}</title>
 	<meta name="renderer" content="webkit">
-	<meta name="Keywords" content="{$company.keys}" />
-	<meta name="Description" content="{$company.desc}" />
+	<meta name="Keywords" content="{$company.set_keys}" />
+	<meta name="Description" content="{$company.set_desc}" />
 	<link rel="stylesheet" href="__PUBLIC__/css/combo/base.css"/>
 	<block name="css"></block>
 	<script>
@@ -34,6 +34,7 @@
 				<li><a href="{:U('About/index')}" <eq name="nav_type" value="about">class="active"</eq>>关于奥本</a>|</li>
 				<!-- <li><a href="{:U('News/index')}" <eq name="nav_type" value="news">class="active"</eq>>公司新闻</a>|</li> -->
 				<li><a href="{:U('Goods/index')}" <eq name="nav_type" value="goods">class="active"</eq>>产品介绍</a>|</li>
+				<li><a href="{:U('Goods/app')}" <eq name="nav_type" value="app">class="active"</eq>>应用范围</a>|</li>
 				<li><a href="{:U('Casestudy/index')}" <eq name="nav_type" value="company">class="active"</eq>>案例分析</a>|</li>
 				<li><a href="{:U('Contact/index')}" <eq name="nav_type" value="contact">class="active"</eq>>联系我们</a>|</li>
 				<li class="last"><a href="{:U('Help/index')}" <eq name="nav_type" value="help">class="active"</eq>>帮助中心</a></li>
@@ -44,6 +45,11 @@
             <div class="row-sub-nav row-about clearfix <neq name="nav_type" value="goods">hide</neq>">
 				<include file="Public:goodsNav" />
 			</div>
+
+            <div class="row-sub-nav row-about clearfix <neq name="nav_type" value="app">hide</neq>">
+                <include file="Public:appNav" />
+            </div>
+
 			<div class="row-sub-nav row-about clearfix <neq name="nav_type" value="company">hide</neq>">
 				<include file="Public:case_study_nav" />
 			</div>

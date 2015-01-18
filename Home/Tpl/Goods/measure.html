@@ -1,0 +1,59 @@
+<extend name="Public:base" />
+<block name="css">
+	<link rel="stylesheet" href="__PUBLIC__/css/combo/goods.css"/>
+</block>
+<block name="wraper">
+	<div class="wrap mb5x4">
+		<img src="__PUBLIC__/img/banner/product.jpg" alt="产品介绍"/>
+	</div>
+	<div class="wrap clearfix">
+
+		<div class="sub-nav fl">
+			<h2>Products</h2>
+			<include file="Public:goodsNav" />
+		</div>
+
+		<div class="sub-wrap fr goods-list-box">
+			<div class="m1 s-mt">
+				<h2>测量原理</h2>
+				<ul class="breadcrumb">
+					<li>
+						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
+					</li>
+					<li class="active">测量原理</li>
+				</ul>
+			</div>
+			<div class="m-app-box">
+				<h3>测量原理</h3>
+				<div class="content">
+                    <div class="row">
+                        <div class="cell">
+                            <p>在夹带颗粒物的气流中，当颗粒与探头碰撞时，颗粒和探头间会发生电荷传递（即摩擦起电）。气流中的颗粒自身也带有一定净电荷，当微粒经过探头附近时，探头上也会产生感应电荷（即静电感应）。 </p>
+                            <p>当一个颗粒与探头碰撞时，电荷转递量的多少取决于颗粒的物理和化学性质（如大小、化学组成、介电常数等）以及速度。一群颗粒物与探头碰撞的综合结果是在探头上产生的微</p>
+                        </div>
+                        <div class="cell">
+                            <img src="__PUBLIC__/Uploads/goods/measure1.png">
+                            <div>图1碰撞电流的产生</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">
+                            <p>小电流信号，信号的强度与一定时间内碰撞探头的颗粒数量成正比。在探头附近，颗粒通常不是均匀分布的，同时它们的流动速度也在平均速度上下浮动；所以“碰撞”电流信号的强度也是在某一均值附近浮动。</p>
+                            <p>当一个颗粒掠过探头时，感应电荷量的多少取决于探头的形状、探头和粒子之间的径向距离、颗粒所带的净电量以及粒子的轴向速度。当颗粒通过在探头所在的管道截面时，如果将其所带的电荷当作一个脉冲信号，而由感应电荷在探头上的生成的电流信号则是这个感应系统的脉冲响应。这样探头和它周围的空间形成了一个信号过滤器，即“空间过滤效应”。当随机分布的颗粒掠过探头时，得到的感应电流信号则是原始随机信号经过滤后的结果，其中包含关于颗粒流动和信号过滤器本身的重要信息。</p>
+                        </div>
+                        <div class="cell">
+                            <img src="__PUBLIC__/Uploads/goods/measure2.png">
+                            <div>图2 感应电流的产生</div>
+                        </div>
+                    </div>
+					<p>上述两个来源的电流信号经过监测、处理和分析，来得到颗粒物的流量和浓度。</p>
+                    <div class="row">
+                        <div class="cell"><img src="__PUBLIC__/Uploads/goods/measure3.png"></div>
+                        <div class="cell"><img src="__PUBLIC__/Uploads/goods/measure4.png"></div>
+                    </div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</block>
