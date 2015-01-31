@@ -8,8 +8,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php echo ($company["name"]); ?></title>
 	<meta name="renderer" content="webkit">
-	<meta name="Keywords" content="<?php echo ($company["keys"]); ?>" />
-	<meta name="Description" content="<?php echo ($company["desc"]); ?>" />
+	<meta name="Keywords" content="<?php echo ($company["set_keys"]); ?>" />
+	<meta name="Description" content="<?php echo ($company["set_desc"]); ?>" />
 	<link rel="stylesheet" href="__PUBLIC__/css/combo/base.css"/>
 	
 	<link rel="stylesheet" href="__PUBLIC__/css/combo/goods.css"/>
@@ -148,7 +148,7 @@
 						<img src="<?php echo ($vo["goods_pics"]); ?>" alt=""/>
 					</div>
 					<div class="s-m">
-						<div class="mt"><?php echo ($vo["goods_name"]); ?></div>
+						<div class="mt"><a href="<?php echo U('Goods/detail');?>?id=<?php echo ($vo["id"]); ?>"><?php echo ($vo["goods_name"]); ?></a></div>
 						<p><?php echo (msubstr($vo["goods_desc"],0,200)); ?>
 							<?php if(!empty($vo["goods_detail"])): ?><a href="<?php echo U('Goods/detail');?>?id=<?php echo ($vo["id"]); ?>">[更多详情]</a><?php endif; ?>
 						</p>

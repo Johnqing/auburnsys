@@ -8,8 +8,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php echo ($company["name"]); ?></title>
 	<meta name="renderer" content="webkit">
-	<meta name="Keywords" content="<?php echo ($company["keys"]); ?>" />
-	<meta name="Description" content="<?php echo ($company["desc"]); ?>" />
+	<meta name="Keywords" content="<?php echo ($company["set_keys"]); ?>" />
+	<meta name="Description" content="<?php echo ($company["set_desc"]); ?>" />
 	<link rel="stylesheet" href="__PUBLIC__/css/combo/base.css"/>
 	
     <link rel="stylesheet" href="__PUBLIC__/css/combo/company.css"/>

@@ -8,8 +8,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php echo ($company["name"]); ?></title>
 	<meta name="renderer" content="webkit">
-	<meta name="Keywords" content="<?php echo ($company["keys"]); ?>" />
-	<meta name="Description" content="<?php echo ($company["desc"]); ?>" />
+	<meta name="Keywords" content="<?php echo ($company["set_keys"]); ?>" />
+	<meta name="Description" content="<?php echo ($company["set_desc"]); ?>" />
 	<link rel="stylesheet" href="__PUBLIC__/css/combo/base.css"/>
 	
 	<link rel="stylesheet" href="__PUBLIC__/css/combo/goods.css"/>
@@ -73,6 +73,20 @@
 	</li>
 </ul>
 			</div>
+
+            <div class="row-sub-nav row-about clearfix <?php if(($nav_type) != "app"): ?>hide<?php endif; ?>">
+                <ul class="mc">
+	<li class="first <?php if(($app_type) == "index"): ?>active<?php endif; ?>">
+	<a href="<?php echo U('Goods/app');?>">all</a>
+	</li>
+
+    <li class="<?php if(($help_type) == "tech"): ?>active<?php endif; ?>">
+    <a href="<?php echo U('Goods/tech');?>">奥本技术</a>
+    </li>
+
+</ul>
+            </div>
+
 			<div class="row-sub-nav row-about clearfix <?php if(($nav_type) != "company"): ?>hide<?php endif; ?>">
 				<ul class="mc">
 	<li class="first <?php if(($company_type) == "caseStudy"): ?>active<?php endif; ?>">
@@ -91,9 +105,6 @@
 				<ul class="mc">
 	<li class="first <?php if(($help_type) == "index"): ?>active<?php endif; ?>">
 	<a href="<?php echo U('Help/index');?>">常见问题</a>
-	</li>
-	<li class="<?php if(($help_type) == "tech"): ?>active<?php endif; ?>">
-	<a href="<?php echo U('Help/tech');?>">奥本技术</a>
 	</li>
 </ul>
 			</div>

@@ -32,7 +32,7 @@
 						<img src="{$vo.goods_pics}" alt=""/>
 					</div>
 					<div class="s-m">
-						<div class="mt">{$vo.goods_name}</div>
+						<div class="mt"><a href="{:U('Goods/detail')}?id={$vo.id}">{$vo.goods_name}</a></div>
 						<p>{$vo.goods_desc|msubstr=0,200}
 							<notempty name="vo.goods_detail">
 								<a href="{:U('Goods/detail')}?id={$vo.id}">[更多详情]</a>
