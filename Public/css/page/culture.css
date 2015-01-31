@@ -1,1 +1,17 @@
-.culture-box{line-height:25px}.culture-box .address,.culture-box p{margin-bottom:10px}.culture-box p{text-indent:2em}.culture-box ol{margin:10px 0}.culture-box a{color:#666;text-decoration:underline}
+.culture-box {
+  line-height: 25px;
+}
+.culture-box .address {
+  margin-bottom: 10px;
+}
+.culture-box p {
+  margin-bottom: 10px;
+  text-indent: 2em;
+}
+.culture-box ol {
+  margin: 10px 0;
+}
+.culture-box a {
+  color: #666;
+  text-decoration: underline;
+}

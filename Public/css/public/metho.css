@@ -1,0 +1,50 @@
+/**
+* 公共字体
+*/
+/**
+* @通用颜色
+* @{color:@color-33;}
+*/
+/**
+* @ 圆角
+* @param {String} top
+* @param {String} right
+* @param {String} bottom
+* @param {String} left
+*/
+/**
+* @ 渐变色
+* @param {String} start-color
+* @param {String} end-color
+*/
+/**
+* @ 阴影
+* @ type{String:x坐标,y坐标,阴影长度,阴影颜色}
+*/
+/**
+* @ 触发haslayout
+* @ ie使用zoom
+*/
+/**
+* @ 背景图
+* @ type{String:xxx.jpg;}
+*/
+/**
+* @ 定位
+* @ type{String:top,left,方式;}
+*/
+/**
+* @透明度
+* @type{width,float}
+*/
+/**
+* @英文自动折行
+*/
+/**
+* @rgba
+* @type{String r,g,b,a}
+*/
+/**
+* 等高
+*
+*/

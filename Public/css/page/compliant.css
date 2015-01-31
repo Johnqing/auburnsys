@@ -1,1 +1,13 @@
-.cpt-box p{line-height:22px}.cpt-box a{color:#c00}.cpt-box table{margin-top:10px}.cpt-box table td{padding:10px 0;line-height:25px}
+.cpt-box p {
+  line-height: 22px;
+}
+.cpt-box a {
+  color: #cc0000;
+}
+.cpt-box table {
+  margin-top: 10px;
+}
+.cpt-box table td {
+  padding: 10px 0;
+  line-height: 25px;
+}

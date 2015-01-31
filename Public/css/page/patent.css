@@ -1,1 +1,37 @@
-.patent-box{color:#666}.patent-box .m{margin-bottom:10px;border-bottom:1px solid #ccc;padding:0 10px 10px}.patent-box .mt,.patent-box .inventors,.patent-box .time{margin-bottom:5px}.patent-box .mt{color:#333;font-size:14px;font-weight:700}.patent-box .t1,.patent-box .d1{float:left}.patent-box .t1{color:#333;font-weight:700}.patent-box .inventors,.patent-box .time{overflow:hidden;*zoom:1}.patent-box .summary .t1{width:100%}.patent-box .summary .d2{line-height:22px}
+.patent-box {
+  color: #666;
+}
+.patent-box .m {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding: 0 10px 10px;
+}
+.patent-box .mt,
+.patent-box .inventors,
+.patent-box .time {
+  margin-bottom: 5px;
+}
+.patent-box .mt {
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+}
+.patent-box .t1,
+.patent-box .d1 {
+  float: left;
+}
+.patent-box .t1 {
+  color: #333;
+  font-weight: bold;
+}
+.patent-box .inventors,
+.patent-box .time {
+  overflow: hidden;
+  *zoom: 1;
+}
+.patent-box .summary .t1 {
+  width: 100%;
+}
+.patent-box .summary .d2 {
+  line-height: 22px;
+}

@@ -1,1 +1,110 @@
-.history-box{margin-bottom:30px;padding-bottom:30px;padding-right:330px;border-bottom:1px solid #e9e8e6;background:url('../../img/about/history_bg.jpg') no-repeat;_background:url('../../img/about/history_bg_png8.jpg') no-repeat;background-position:right bottom}.history-box h3{margin-bottom:15px;font-size:14px;color:#8c662a}.history-box p{color:#828181;line-height:22px}.tabs{overflow:hidden;*zoom:1;border-bottom:2px solid #757575}.tabs li{float:left;margin-right:1px;width:120px;height:27px;line-height:27px}.tabs li a{display:block;margin-top:4px;border:1px solid #eaeaea;border-bottom:0 none;height:23px;line-height:23px;text-align:center;color:#a0a0a0}.tabs .active{background:#757575}.tabs .active a{border:0;margin-top:0;height:27px;line-height:27px;color:#fff}.tabs-cont .time{width:60px;text-align:center;font-size:16px;font-family:verdana,arial,serif;color:#9b7a46}.tabs-cont .desc{color:#868686}
+/**
+* 公共字体
+*/
+/**
+* @通用颜色
+* @{color:@color-33;}
+*/
+/**
+* @ 圆角
+* @param {String} top
+* @param {String} right
+* @param {String} bottom
+* @param {String} left
+*/
+/**
+* @ 渐变色
+* @param {String} start-color
+* @param {String} end-color
+*/
+/**
+* @ 阴影
+* @ type{String:x坐标,y坐标,阴影长度,阴影颜色}
+*/
+/**
+* @ 触发haslayout
+* @ ie使用zoom
+*/
+/**
+* @ 背景图
+* @ type{String:xxx.jpg;}
+*/
+/**
+* @ 定位
+* @ type{String:top,left,方式;}
+*/
+/**
+* @透明度
+* @type{width,float}
+*/
+/**
+* @英文自动折行
+*/
+/**
+* @rgba
+* @type{String r,g,b,a}
+*/
+/**
+* 等高
+*
+*/
+.history-box {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  padding-right: 330px;
+  border-bottom: 1px solid #e9e8e6;
+  background: url('../../img/about/history_bg.jpg') no-repeat;
+  _background: url('../../img/about/history_bg_png8.jpg') no-repeat;
+  background-position: right bottom;
+}
+.history-box h3 {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #8c662a;
+}
+.history-box p {
+  color: #828181;
+  line-height: 22px;
+}
+.tabs {
+  overflow: hidden;
+  *zoom: 1;
+  border-bottom: 2px solid #757575;
+}
+.tabs li {
+  float: left;
+  margin-right: 1px;
+  width: 120px;
+  height: 27px;
+  line-height: 27px;
+}
+.tabs li a {
+  display: block;
+  margin-top: 4px;
+  border: 1px solid #eaeaea;
+  border-bottom: 0 none;
+  height: 23px;
+  line-height: 23px;
+  text-align: center;
+  color: #a0a0a0;
+}
+.tabs .active {
+  background: #757575;
+}
+.tabs .active a {
+  border: 0;
+  margin-top: 0;
+  height: 27px;
+  line-height: 27px;
+  color: #fff;
+}
+.tabs-cont .time {
+  width: 60px;
+  text-align: center;
+  font-size: 16px;
+  font-family: verdana, arial, serif;
+  color: #9b7a46;
+}
+.tabs-cont .desc {
+  color: #868686;
+}
