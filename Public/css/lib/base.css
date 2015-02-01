@@ -76,6 +76,42 @@ h6 {
 .row .cell {
   float: left;
 }
+.dt-cont table {
+  margin: 15px 0;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #cbcbcb;
+}
+.dt-cont table caption {
+  color: #000;
+  font: italic 85%/1 arial, sans-serif;
+  padding: 1em 0;
+  text-align: center;
+}
+.dt-cont td,
+.dt-cont th {
+  border-left: 1px solid #cbcbcb;
+  border-top: 1px solid #cbcbcb;
+  font-size: inherit;
+  margin: 0;
+  overflow: visible;
+  padding: 0.5em 1em;
+}
+.dt-cont td:first-child,
+.dt-cont th:first-child {
+  border-left-width: 0;
+}
+.dt-cont th {
+  background: #f2f2f2;
+  color: #000;
+  text-align: left;
+  vertical-align: bottom;
+}
+.dt-cont td {
+  background-color: transparent;
+}
 .language {
   float: right;
   border-radius: 30px;

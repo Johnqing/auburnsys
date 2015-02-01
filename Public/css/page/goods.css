@@ -145,3 +145,14 @@
 .m-app-box .m-tb-2 td td {
   border: 0 none;
 }
+.m-app-box .row {
+  overflow: hidden;
+  zoom: 1;
+}
+.m-app-box .row .cell {
+  float: left;
+  width: 50%;
+}
+.m-app-box .row .cell-center {
+  text-align: center;
+}
