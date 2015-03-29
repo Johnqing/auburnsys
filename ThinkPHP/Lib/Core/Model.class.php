@@ -400,12 +400,16 @@ class Model {
         $data       =   $this->_facade($data);
         // 分析表达式
         $options    =   $this->_parseOptions($options);
-        $pk         =   $this->getPk();
+        if(false === $this->_before_update($data,$options)) {
+            return false;
+        }
         if(!isset($options['where']) ) {
             // 如果存在主键数据 则自动作为更新条件
-            if(isset($data[$pk])) {
+            if(isset($data[$this->getPk()])) {
+                $pk                 =   $this->getPk();
                 $where[$pk]         =   $data[$pk];
                 $options['where']   =   $where;
+                $pkValue            =   $data[$pk];
                 unset($data[$pk]);
             }else{
                 // 如果没有任何更新条件则不执行
@@ -413,12 +417,6 @@ class Model {
                 return false;
             }
         }
-        if(is_array($options['where']) && isset($options['where'][$pk])){
-            $pkValue    =   $options['where'][$pk];
-        }        
-        if(false === $this->_before_update($data,$options)) {
-            return false;
-        }        
         $result     =   $this->db->update($data,$options);
         if(false !== $result) {
             if(isset($pkValue)) $data[$pk]   =  $pkValue;
@@ -445,23 +443,21 @@ class Model {
             else
                 return false;
         }
-        $pk   =  $this->getPk();
         if(is_numeric($options)  || is_string($options)) {
             // 根据主键删除记录
+            $pk   =  $this->getPk();
             if(strpos($options,',')) {
                 $where[$pk]     =  array('IN', $options);
             }else{
                 $where[$pk]     =  $options;
             }
+            $pkValue            =  $where[$pk];
             $options            =  array();
             $options['where']   =  $where;
         }
         // 分析表达式
         $options =  $this->_parseOptions($options);
-        if(is_array($options['where']) && isset($options['where'][$pk])){
-            $pkValue    =   $options['where'][$pk];
-        }
-        $result  =    $this->db->delete($options);
+        $result=    $this->db->delete($options);
         if(false !== $result) {
             $data = array();
             if(isset($pkValue)) $data[$pk]   =  $pkValue;
@@ -558,7 +554,7 @@ class Model {
                     if(is_scalar($val)) {
                         $this->_parseType($options['where'],$key);
                     }
-                }elseif(!is_numeric($key) && '_' != substr($key,0,1) && false === strpos($key,'.') && false === strpos($key,'(') && false === strpos($key,'|') && false === strpos($key,'&')){
+                }elseif('_' != substr($key,0,1) && false === strpos($key,'.') && false === strpos($key,'(') && false === strpos($key,'|') && false === strpos($key,'&')){
                     unset($options['where'][$key]);
                 }
             }
@@ -581,9 +577,7 @@ class Model {
     protected function _parseType(&$data,$key) {
         if(empty($this->options['bind'][':'.$key])){
             $fieldType = strtolower($this->fields['_type'][$key]);
-            if(false !== strpos($fieldType,'enum')){
-                // 支持ENUM类型优先检测
-            }elseif(false === strpos($fieldType,'bigint') && false !== strpos($fieldType,'int')) {
+            if(false === strpos($fieldType,'bigint') && false !== strpos($fieldType,'int')) {
                 $data[$key]   =  intval($data[$key]);
             }elseif(false !== strpos($fieldType,'float') || false !== strpos($fieldType,'double')){
                 $data[$key]   =  floatval($data[$key]);
@@ -1152,10 +1146,9 @@ class Model {
         // 分析表达式
         if(true === $parse) {
             $options =  $this->_parseOptions();
-            $sql    =   $this->db->parseSql($sql,$options);
+            $sql  =   $this->db->parseSql($sql,$options);
         }elseif(is_array($parse)){ // SQL预处理
-            $parse  =   array_map(array($this->db,'escapeString'),$parse);
-            $sql    =   vsprintf($sql,$parse);
+            $sql  = vsprintf($sql,$parse);
         }else{
             $sql    =   strtr($sql,array('__TABLE__'=>$this->getTableName(),'__PREFIX__'=>C('DB_PREFIX')));
         }

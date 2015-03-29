@@ -7,6 +7,6 @@ class IndexAction extends CommonAction {
             'nav_type' => 'index',
             'prduct' => $prduct
         ));
-        $this->display('Index/index');
+        $this->display();
     }
 }

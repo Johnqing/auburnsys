@@ -20,7 +20,7 @@ class AboutAction extends CommonAction {
      */
     public function patent(){
         // 导入分页类
-        import("ORG.Util.Page");
+        import("@.ORG.Page");
         $patent = M('company_patent');
 
         // 获取条数

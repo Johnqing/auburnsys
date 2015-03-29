@@ -2,7 +2,7 @@
 class HelpAction extends CommonAction {
     public function index(){
         // 导入分页类
-        import("ORG.Util.Page");
+        import("@.ORG.Page");
         $helps = M('issue');
         // 获取条数
         $count = $helps->count();

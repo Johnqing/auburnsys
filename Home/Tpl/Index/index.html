@@ -15,7 +15,7 @@
 			<div class="mc">
 				<ul>
 					<Volist name="prduct" id="vo">
-						<li><a href="{:U('Goods/goods_desc')}?time={$vo.goods_addtime}">{$vo.goods_name|msubstr=0,18}</a></li>
+						<li><a href="{:U('Goods/detail')}?id={$vo.id}">{$vo.goods_name|msubstr=0,18}</a></li>
 					</Volist>
 				</ul>
 				<div class="more"><a href="{:U('Goods/index')}">More</a></div>

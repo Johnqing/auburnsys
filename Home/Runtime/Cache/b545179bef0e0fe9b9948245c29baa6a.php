@@ -8,8 +8,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php echo ($company["name"]); ?></title>
 	<meta name="renderer" content="webkit">
-	<meta name="Keywords" content="<?php echo ($company["set_keys"]); ?>" />
-	<meta name="Description" content="<?php echo ($company["set_desc"]); ?>" />
+	<meta name="Keywords" content="<?php echo ($company["keys"]); ?>" />
+	<meta name="Description" content="<?php echo ($company["desc"]); ?>" />
 	<link rel="stylesheet" href="__PUBLIC__/css/combo/base.css"/>
 	
 	<link rel="stylesheet" href="__PUBLIC__/css/combo/contact.css"/>
@@ -36,7 +36,6 @@
 				<li><a href="<?php echo U('About/index');?>" <?php if(($nav_type) == "about"): ?>class="active"<?php endif; ?>>关于奥本</a>|</li>
 				<!-- <li><a href="<?php echo U('News/index');?>" <?php if(($nav_type) == "news"): ?>class="active"<?php endif; ?>>公司新闻</a>|</li> -->
 				<li><a href="<?php echo U('Goods/index');?>" <?php if(($nav_type) == "goods"): ?>class="active"<?php endif; ?>>产品介绍</a>|</li>
-				<li><a href="<?php echo U('Goods/app');?>" <?php if(($nav_type) == "app"): ?>class="active"<?php endif; ?>>应用范围</a>|</li>
 				<li><a href="<?php echo U('Casestudy/index');?>" <?php if(($nav_type) == "company"): ?>class="active"<?php endif; ?>>案例分析</a>|</li>
 				<li><a href="<?php echo U('Contact/index');?>" <?php if(($nav_type) == "contact"): ?>class="active"<?php endif; ?>>联系我们</a>|</li>
 				<li class="last"><a href="<?php echo U('Help/index');?>" <?php if(($nav_type) == "help"): ?>class="active"<?php endif; ?>>帮助中心</a></li>
@@ -68,25 +67,11 @@
 	<li class="first <?php if(($goods_type) == "index"): ?>active<?php endif; ?>">
 	<a href="<?php echo U('Goods/index');?>">all</a>
 	</li>
-	<li class="<?php if(($goods_type) == "measure"): ?>active<?php endif; ?>">
-	<a href="<?php echo U('Goods/measure');?>">测量原理</a>
+	<li class="<?php if(($goods_type) == "app"): ?>active<?php endif; ?>">
+	<a href="<?php echo U('Goods/app');?>">应用范围</a>
 	</li>
 </ul>
 			</div>
-
-            <div class="row-sub-nav row-about clearfix <?php if(($nav_type) != "app"): ?>hide<?php endif; ?>">
-                <ul class="mc">
-	<li class="first <?php if(($app_type) == "index"): ?>active<?php endif; ?>">
-	<a href="<?php echo U('Goods/app');?>">all</a>
-	</li>
-
-    <li class="<?php if(($help_type) == "tech"): ?>active<?php endif; ?>">
-    <a href="<?php echo U('Goods/tech');?>">奥本技术</a>
-    </li>
-
-</ul>
-            </div>
-
 			<div class="row-sub-nav row-about clearfix <?php if(($nav_type) != "company"): ?>hide<?php endif; ?>">
 				<ul class="mc">
 	<li class="first <?php if(($company_type) == "caseStudy"): ?>active<?php endif; ?>">
@@ -105,6 +90,9 @@
 				<ul class="mc">
 	<li class="first <?php if(($help_type) == "index"): ?>active<?php endif; ?>">
 	<a href="<?php echo U('Help/index');?>">常见问题</a>
+	</li>
+	<li class="<?php if(($help_type) == "tech"): ?>active<?php endif; ?>">
+	<a href="<?php echo U('Help/tech');?>">奥本技术</a>
 	</li>
 </ul>
 			</div>
@@ -133,7 +121,7 @@
 				<h2>联系我们</h2>
 				<ul class="breadcrumb">
 					<li>
-						<a href="__APP__">首页</a><span class="divider">&gt;</span>
+						<a href="__APP__">首页</a> <span class="divider">&gt;</span>
 					</li>
 					<li class="active">联系我们</li>
 				</ul>
@@ -143,7 +131,7 @@
 			<table class="tbl-type2 mgb_40" cellspacing="0">
 				<tr>
 					<th width="188">
-						<span>地址</span>
+						<span>Address</span>
 					</th>
 					<td class="last">
 						<span><?php echo ($company["address"]); ?></span>
@@ -151,31 +139,65 @@
 				</tr>
 				<tr>
 					<th>
-						<span>总部电话</span>
+						<span>Phone</span>
 					</th>
 					<td class="last">
-						<span><?php echo ($company["fex"]); ?></span>
+						<span><?php echo ($company["mobile"]); ?></span>
 					</td>
 				</tr>
-
-                <tr>
-                    <th>
-                        <span>手机</span>
-                    </th>
-                    <td class="last">
-                        <span><?php echo ($company["mobile"]); ?></span>
-                    </td>
-                </tr>
-
-                <tr>
+				<tr>
 					<th>
-						<span>Email</span>
+						<span>email</span>
 					</th>
 					<td class="last">
 						<span><a href="mailto:<?php echo ($company["email"]); ?>"><?php echo ($company["email"]); ?></a></span>
 					</td>
 				</tr>
 			</table>
+			<?php if(is_array($agents)): $i = 0; $__LIST__ = $agents;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="city"><?php echo ($vo["city"]); ?></div>
+				<div class="company"><?php echo ($vo["name"]); ?></div>
+				<table class="tbl-type2 mgb_40" cellspacing="0">
+					<tr>
+						<th width="188">
+							<span>Contact</span>
+						</th>
+						<td class="last">
+							<span><?php echo ($vo["contact"]); ?></span>
+						</td>
+					</tr>
+					<?php if(!empty($vo["address"])): ?><tr>
+						<th width="188">
+							<span>Address</span>
+						</th>
+						<td class="last">
+							<span><?php echo ($vo["address"]); ?></span>
+						</td>
+					</tr><?php endif; ?>
+					<tr>
+						<th>
+							<span>Phone</span>
+						</th>
+						<td class="last">
+							<span><?php echo ($vo["tel"]); ?></span>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<span>email</span>
+						</th>
+						<td class="last">
+							<span><a href="mailto:<?php echo ($vo["email"]); ?>"><?php echo ($vo["email"]); ?></a></span>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<span>Fax</span>
+						</th>
+						<td class="last">
+							<span><?php echo ($vo["fax"]); ?></span>
+						</td>
+					</tr>
+				</table><?php endforeach; endif; else: echo "" ;endif; ?>
 		</div>
 	</div>
 

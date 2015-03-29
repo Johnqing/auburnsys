@@ -2,7 +2,8 @@
 class GoodsAction extends CommonAction{
     public function index(){
         // 导入分页类
-        import("ORG.Util.Page");
+        //import("ORG.Util.Page");
+        import("@.ORG.Page");
         $goods = M('goods');
         $goods_pdf = M('goods_pdf');
         // 获取条数
@@ -56,7 +57,6 @@ class GoodsAction extends CommonAction{
         ));
         $this->display();
     }
-
     public function app(){
         $this->assign(array(
             'app_type'=>'index',

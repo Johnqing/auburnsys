@@ -29,7 +29,7 @@ class CasestudyAction extends CommonAction{
     // 公共方法
     protected function pageNav($Model){
         // 导入分页类
-        import("ORG.Util.Page");
+        import("@.ORG.Page");
         // 获取条数
         $count = $Model->count();
         // 分页 10条分

@@ -1,10 +1,13 @@
 <?php
 $db = include './Inc/config.inc.php';
 $myConf = array(
+    'TMPL_PARSE_STRING' => array(
+        '__PUBLIC__' => 'http://auburn.sinaapp.com/Public',
+    ),
     //调式期关闭缓存
     'TMPL_CACHE_ON' => true,
     //URL模式 PathInfo模式
-    'URL_MODEL'=> 1,
+    'URL_MODEL'=> 2,
     //伪静态
     'URL_HTML_SUFFIX' => 'html',
     //访问URL忽略大小写

@@ -19,7 +19,7 @@
 				<h2>联系我们</h2>
 				<ul class="breadcrumb">
 					<li>
-						<a href="__APP__">首页</a><span class="divider">&gt;</span>
+						<a href="{:U('Index/index')}">首页</a> <span class="divider">&gt;</span>
 					</li>
 					<li class="active">联系我们</li>
 				</ul>
@@ -43,19 +43,17 @@
 						<span>{$company.fex}</span>
 					</td>
 				</tr>
-
                 <tr>
                     <th>
                         <span>手机</span>
-                    </th>
-                    <td class="last">
-                        <span>{$company.mobile}</span>
-                    </td>
-                </tr>
-
-                <tr>
+					</th>
+					<td class="last">
+						<span>{$company.mobile}</span>
+					</td>
+				</tr>
+				<tr>
 					<th>
-						<span>Email</span>
+						<span>email</span>
 					</th>
 					<td class="last">
 						<span><a href="mailto:{$company.email}">{$company.email}</a></span>

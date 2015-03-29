@@ -36,7 +36,6 @@
 				<li><a href="<?php echo U('About/index');?>" <?php if(($nav_type) == "about"): ?>class="active"<?php endif; ?>>关于奥本</a>|</li>
 				<!-- <li><a href="<?php echo U('News/index');?>" <?php if(($nav_type) == "news"): ?>class="active"<?php endif; ?>>公司新闻</a>|</li> -->
 				<li><a href="<?php echo U('Goods/index');?>" <?php if(($nav_type) == "goods"): ?>class="active"<?php endif; ?>>产品介绍</a>|</li>
-				<li><a href="<?php echo U('Goods/app');?>" <?php if(($nav_type) == "app"): ?>class="active"<?php endif; ?>>应用范围</a>|</li>
 				<li><a href="<?php echo U('Casestudy/index');?>" <?php if(($nav_type) == "company"): ?>class="active"<?php endif; ?>>案例分析</a>|</li>
 				<li><a href="<?php echo U('Contact/index');?>" <?php if(($nav_type) == "contact"): ?>class="active"<?php endif; ?>>联系我们</a>|</li>
 				<li class="last"><a href="<?php echo U('Help/index');?>" <?php if(($nav_type) == "help"): ?>class="active"<?php endif; ?>>帮助中心</a></li>
@@ -68,25 +67,11 @@
 	<li class="first <?php if(($goods_type) == "index"): ?>active<?php endif; ?>">
 	<a href="<?php echo U('Goods/index');?>">all</a>
 	</li>
-	<li class="<?php if(($goods_type) == "measure"): ?>active<?php endif; ?>">
-	<a href="<?php echo U('Goods/measure');?>">测量原理</a>
+	<li class="<?php if(($goods_type) == "app"): ?>active<?php endif; ?>">
+	<a href="<?php echo U('Goods/app');?>">应用范围</a>
 	</li>
 </ul>
 			</div>
-
-            <div class="row-sub-nav row-about clearfix <?php if(($nav_type) != "app"): ?>hide<?php endif; ?>">
-                <ul class="mc">
-	<li class="first <?php if(($app_type) == "index"): ?>active<?php endif; ?>">
-	<a href="<?php echo U('Goods/app');?>">all</a>
-	</li>
-
-    <li class="<?php if(($help_type) == "tech"): ?>active<?php endif; ?>">
-    <a href="<?php echo U('Goods/tech');?>">奥本技术</a>
-    </li>
-
-</ul>
-            </div>
-
 			<div class="row-sub-nav row-about clearfix <?php if(($nav_type) != "company"): ?>hide<?php endif; ?>">
 				<ul class="mc">
 	<li class="first <?php if(($company_type) == "caseStudy"): ?>active<?php endif; ?>">
@@ -105,6 +90,9 @@
 				<ul class="mc">
 	<li class="first <?php if(($help_type) == "index"): ?>active<?php endif; ?>">
 	<a href="<?php echo U('Help/index');?>">常见问题</a>
+	</li>
+	<li class="<?php if(($help_type) == "tech"): ?>active<?php endif; ?>">
+	<a href="<?php echo U('Help/tech');?>">奥本技术</a>
 	</li>
 </ul>
 			</div>

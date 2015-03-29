@@ -21,16 +21,16 @@
 <body>
 <div class="top">
 	<div class="wrap">
-		<span class="language"><a href="__APP__">中文</a>|<a href="http://auburnsys.com/" target="_blank">ENGLISH</a></span>
+		<span class="language"><a href="{:U('Index/index')}">中文</a>|<a href="http://auburnsys.com/" target="_blank">ENGLISH</a></span>
 	</div>
 </div>
 
 <div class="header">
 	<div class="wrap clearfix">
-		<h1 class="fl"><a href="__APP__">{$company.name}</a></h1>
+		<h1 class="fl"><a href="{:U('Index/index')}">{$company.name}</a></h1>
 		<div class="fr">
 			<ul class="nav clearfix">
-				<li><a href="__APP__" <eq name="nav_type" value="index">class="active"</eq>>首页</a>|</li>
+				<li><a href="/" <eq name="nav_type" value="index">class="active"</eq>>首页</a>|</li>
 				<li><a href="{:U('About/index')}" <eq name="nav_type" value="about">class="active"</eq>>关于奥本</a>|</li>
 				<!-- <li><a href="{:U('News/index')}" <eq name="nav_type" value="news">class="active"</eq>>公司新闻</a>|</li> -->
 				<li><a href="{:U('Goods/index')}" <eq name="nav_type" value="goods">class="active"</eq>>产品介绍</a>|</li>
@@ -45,11 +45,9 @@
             <div class="row-sub-nav row-about clearfix <neq name="nav_type" value="goods">hide</neq>">
 				<include file="Public:goodsNav" />
 			</div>
-
             <div class="row-sub-nav row-about clearfix <neq name="nav_type" value="app">hide</neq>">
                 <include file="Public:appNav" />
             </div>
-
 			<div class="row-sub-nav row-about clearfix <neq name="nav_type" value="company">hide</neq>">
 				<include file="Public:case_study_nav" />
 			</div>
@@ -67,7 +65,7 @@
 <div class="footer">
 	<div class="wrap">
 		{$company.copyright}<br>
-		<a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">京ICP证080047号</a>
+		<a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow"> 京ICP备09057487号	</a>
 	</div>
 </div>
 <script src="__PUBLIC__/js/lib/171.js"></script>
